@@ -1,0 +1,5 @@
+<div class="custom-control custom-switch">
+                <input v-model="item.state" type="checkbox" class="custom-control-input" :id="'customSwitch'+item.id">
+                <label v-if="item.state" class="custom-control-label" :for="'customSwitch'+item.id">已启用</label>
+                <label v-else class="custom-control-label" :for="'customSwitch'+item.id">已禁用</label>
+</div>

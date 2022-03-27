@@ -1,0 +1,17 @@
+尽量别用name作为变量名,直接打印出两个未定义的变量age和name查看结果就知道了。
+console.log("age")
+console.log("name")
+
+变量名组成：
+  字母，下划线，数字，$符号
+  不能以数字开头
+
+解释器和编译器的区别
+
+undefined+任何数字 为NaN
+null + 数字 为 数字
+
+typeof 变量   判断变量是什么类型
+
+var a = b =c =9 相当于 var a = 9; b=9;c=9    b和c没有var声明，所以是全局变量
+var a = 9, b = 9, c = 9这才是多个局部变量的写法

@@ -1,0 +1,2 @@
+/* 点击input输入框时触发的边框效果为无 */
+            outline: none;

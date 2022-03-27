@@ -1,0 +1,13 @@
+移动端：
+    rem移动适配：
+        添加字体图标link，css link，flexible.js
+        在less文件中书写css样式，根据easy less插件配置文件的设置(查看文件夹VSCode插件配置使用)，保存less文件之后会自动存放到同级别下的css文件中
+
+网页端：
+    需要移动适配：设置媒体查询
+
+
+
+
+所需的文件夹有：
+    images,css,less,js,lib(存放字体图标等),html文件,uploads

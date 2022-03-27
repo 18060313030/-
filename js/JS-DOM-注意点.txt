@@ -1,0 +1,27 @@
+使用 console.dir() 可以打印我们获取的元素对象，更好的查看对象里面的属性和方法。
+
+通过标签名或类名或querySelectorAll()获取元素的时候，返回的是一个伪数组(不管有没有获取到元素、获取到几个元素)
+如果使用以上方法获取的元素，一定一定一定一定需要使用获取数组元素的方式来使用 (比如说修改某个元素的src属性：arr[0].src="./images/1.jpg")  
+
+className属性的使用会覆盖原有的类名，如果不想覆盖就这么写：element.className = "class1 class2" class1为要修改的类，class2为要保留的类
+
+element.属性  获取内置属性值（元素本身自带的属性）
+element.getAttribute(‘属性’);  主要获得自定义的属性 （标准） 我们程序员自定义的属性
+
+元素上的自定义属性要以【data-】开头
+
+parentNode.children 获取到的是父节点下面的子元素节点，不包括孙子辈的
+
+陈晓昱你要记住使用querySelector(".class")获取类名和id一定要加. 和 #
+
+href="javascript:;"
+
+innerHTML和createElement的区别：
+https://www.bilibili.com/video/BV1k4411w7sV?p=55&spm_id_from=pageDriver
+
+element.onclick = funtion(){} 这种方式绑定事件只能绑定一个，如果有多个，后面会覆盖前面的
+element.addEventListener("click",function(){}) 这种方式绑定事件可以绑定多个，按顺序执行
+
+setInterval(getDate, 1000) 函数名不加括号，一定要记住
+
+加单位啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
