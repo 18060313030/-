@@ -1,0 +1,3 @@
+resolve()		pendding ==> resolved
+reject()		pendding ==> rejected
+throw "error"	pendding ==> rejected

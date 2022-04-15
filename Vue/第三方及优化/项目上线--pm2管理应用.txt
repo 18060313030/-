@@ -1,0 +1,6 @@
+① 在服务器中安装 pm2：npm i pm2 -g 
+② 启动项目：pm2 start 脚本 --name 自定义名称
+③ 查看运行项目：pm2 ls 
+④ 重启项目：pm2 restart 自定义名称
+⑤ 停止项目：pm2 stop 自定义名称
+⑥ 删除项目：pm2 delete 自定义名称

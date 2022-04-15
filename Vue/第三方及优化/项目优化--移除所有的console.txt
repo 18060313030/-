@@ -1,0 +1,2 @@
+名称：babel-plugin-transform-remove-console   https://www.jianshu.com/p/fc38d025b50a
+npm install babel-plugin-transform-remove-console --save-dev

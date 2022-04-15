@@ -1,0 +1,7 @@
+可以通过服务器端使用 Express 做 gzip 压缩。其配置如下：
+// 安装相应包
+ npm install compression -S
+ // 导入包
+ const compression = require('compression');
+ // 启用中间件
+ app.use(compression());

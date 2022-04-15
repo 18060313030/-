@@ -1,0 +1,15 @@
+Easy less ：保存less文件会自动生成css文件
+
+全局文件导出路径设置(设置自成的css文件存放路径)：
+  设置(Ctrl+,)--搜索Easy--选中在setting.json中编辑
+    添加一行代码："less.compile":{
+        		"out": "../css/"
+    	          }
+    css后面有斜杆表示是一个文件夹，没有则表示是一个文件
+
+单个文件导出路径设置：
+  在less文件中的第一行设置 // out : ./css/
+                                          // out : ./css/自定义名称.css
+
+禁止导出：
+  // out: false

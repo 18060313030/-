@@ -1,0 +1,13 @@
+使用过滤器
+全局过滤器
+Vue.filter("名称",(time)=>{
+
+})
+局部过滤器
+filters:{
+    过滤器名(){
+
+    }
+}
+
+https://blog.csdn.net/tangshiyilang/article/details/119000437

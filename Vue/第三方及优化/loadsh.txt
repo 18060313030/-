@@ -1,0 +1,12 @@
+使用lodash的cloneDeep()进行深拷贝
+需要下载模块
+    npm i --save lodash
+    import _ from "lodash"
+    _.cloneDeep(obj)
+
+也可以使用
+     JSON.parse(JSON.stringify(obj))
+
+
+使用lodash进行合并
+_.merge(obj1,obj2)

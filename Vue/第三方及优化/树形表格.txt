@@ -1,0 +1,34 @@
+组件模块：vue-table-with-tree-grid
+github地址：https://github.com/MisterTaki/vue-table-with-tree-grid
+
+下载模块：npm i vue-table-with-tree-grid -S
+
+main.js中注册全局插件：
+  // 树形表格插件
+  import treeTable from 'vue-table-with-tree-grid';
+  // 安装树形表格插件,tree-table就是在组件中使用的名称
+  // <tree-table></tree-table>
+  Vue.component("tree-table", treeTable)
+
+UI组件：
+<tree-table :data="goodsClassifyList" :columns="columns" show-index border :selection-type="false" :expand-type="false">
+   <template slot="isok" slot-scope="scope">
+        <i class="el-icon-success" v-if="!scope.row.cat_deleted" style="color:lightgreen"></i>
+        <i class="el-icon-error" v-else style="color:red"></i>
+    </template>
+</tree-table>
+
+data:
+columns: [
+        // 为table指定列的定义
+        {
+          label: '分类名称',
+          prop: 'cat_name',
+        },
+        // 定义模板列，就是template，往里面添加组件
+        {
+          label:"是否可用",
+          type:"template",
+          template:"isok"
+        }
+      ],

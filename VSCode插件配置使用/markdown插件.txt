@@ -1,0 +1,1 @@
+Markdown All in One” 和 “Markdown Preview Enhanced” 两个插件，即可满足基本的Markdown编辑需求。

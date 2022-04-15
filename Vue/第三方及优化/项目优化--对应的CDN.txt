@@ -1,0 +1,26 @@
+        <!-- nprogress 的样式表文件 -->
+        <link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+注意各个依赖包之间的关系，前后顺序不能乱
+        <!-- 富文本编辑器 的样式表文件 -->
+        <link rel="stylesheet" href="https://cdn.staticfile.org/quill/3.0.6/quill.core.min.css" />
+        <link rel="stylesheet" href="https://cdn.staticfile.org/quill/3.0.6/quill.snow.min.css" />
+        <link rel="stylesheet" href="https://cdn.staticfile.org/quill/3.0.6/quill.bubble.min.css" />
+        <!-- element-ui 的样式表文件 -->
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+        <!-- vue的JS文件 -->
+        <script src="https://cdn.staticfile.org/vue/2.6.11/vue.min.js"></script>
+        <!-- vue-router的JS文件 -->
+        <script src="https://cdn.staticfile.org/vue-router/3.4.9/vue-router.min.js"></script>
+        <!-- axios的JS文件 -->
+        <script src="https://cdn.staticfile.org/axios/0.20.0/axios.min.js"></script>
+        <!-- lodash的JS文件 -->
+        <script src="https://cdn.staticfile.org/lodash.js/4.17.21/lodash.min.js"></script>
+        <!-- echart的JS文件 -->
+        <script src="https://cdn.staticfile.org/echarts/5.3.2/echarts.min.js"></script>
+        <!--nprogress(顶部进度条)的JS文件 -->
+        <script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script>
+        <!-- 富文本编辑器的 js 文件 -->
+        <script src="https://cdn.staticfile.org/quill/3.0.6/quill.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.6/dist/vue-quill-editor.js"></script>
+        <!-- element-ui 的 js 文件 --> element-ui是基于vue的所以文件要放到vue的后面
+        <script src="https://cdn.staticfile.org/element-ui/2.15.6/index.js"></script>

@@ -1,2 +1,0 @@
-基于vue-cli创建项目： vue create demo
-基于vite创建SAP项目： npm init vite-app(固定写法) demo

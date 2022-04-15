@@ -1,0 +1,5 @@
+效果：页面最顶部会有一个进度条
+
+使用教程：https://www.cnblogs.com/lang7/p/15912678.html
+
+npm install --save nprogress
