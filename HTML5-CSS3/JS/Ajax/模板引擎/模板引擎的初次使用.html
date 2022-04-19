@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1、导入模板引擎插件   只要导入了模板引擎js插件，就会生成一个函数template(定义的模板id,数据) -->
+    <script src="./template-web.js"></script>
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+</body>
+<!-- 2、定义模板 -->
+<script type="text/html" id="template">
+    <h1>姓名：{{ name }}</h1>
+    <h2>年龄：{{ age }}</h2>
+    原文输出：{{@ test }}
+    <div>
+        条件输出： {{ if flag }} flag为{{ flag }} {{ else flag}} flag为{{ flag }} {{ /if }}
+    </div>
+    <div>
+        循环输出： {{ each arr }} {{ $index }}--{{ $value }} {{ /each}}
+    </div>
+</script>
+<script>
+    // 3、定义数据
+    let data = {
+        name: "zs",
+        age: 12,
+        test: "<h3>测试原文输出</h3>",
+        flag: false,
+        arr: ["a", "b", "c"]
+    }
+
+    // 4、调用template函数
+    let token = template("template", data)
+
+    // 5、渲染页面
+    $("#box").append(token)
+</script>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- 导入页面的基本样式 -->
+    <link rel="stylesheet" href="./css/search.css" />
+    <!-- 导入 jQuery -->
+    <script src="./lib/jquery.js"></script>
+    <!-- 导入模板引擎 -->
+    <script src="./lib/template-web.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <img src="./images/taobao_logo.png" alt="" class="logo" />
+
+        <div class="box">
+            <!-- tab 栏 -->
+            <div class="tabs">
+                <div class="tab-active">宝贝</div>
+                <div>店铺</div>
+            </div>
+            <!-- 搜索区域（搜索框和搜索按钮） -->
+            <div class="search-box">
+                <input type="text" class="ipt" placeholder="请输入要搜索的内容" />
+                <input type="text" class="ipt" id="store" placeholder="请输入要搜索的店铺" />
+                <button class="btnSearch">搜索</button>
+            </div>
+            <!-- 搜索建议列表 -->
+            <div id="suggest-list"></div>
+        </div>
+    </div>
+</body>
+
+<script type="text/html" id="suggest-tmp">
+    {{each result}}
+    <div class="suggest-item">{{$value[0]}}</div>
+    {{/each}}
+</script>
+<script>
+    $(function() {
+        let timer = null
+
+        // 4、防抖
+        function debounceSearch(kw) {
+            timer = setTimeout(function() {
+                getSuggestList(kw) // 当延迟时间过后，调用获取建议列表函数
+            }, 300)
+        }
+
+        // 1、绑定键盘按下事件
+        $(".ipt").on("keyup", function() {
+            clearTimeout(timer) // 每次触发键盘抬起事件，就会重新计算触发 获取建议列表函数 的时间
+
+            // 1.1判断输入框是否有内容
+            let keywords = $(".ipt").val().trim()
+            if (keywords.length <= 0) {
+                return $("#suggest-list").empty().hide() // 没有内容就清空并隐藏 搜索提示列表
+            }
+
+            // 5.3发起ajax渲染数据之前先查看缓存中是否有对应的数据
+            if (localStore[keywords]) {
+                return renderSuggestList(localStore[keywords])
+            }
+
+            // 渲染数据
+            debounceSearch(keywords)
+
+        })
+
+        // 2、发起ajax通过jsonp跨域请求数据
+        function getSuggestList(kw) {
+            $.ajax({
+                url: "https://suggest.taobao.com/sug?q="  +  kw, // 这个链接需提交一个查询参数————用户输入的文本框值
+                dataType: "JSONP",
+                success(res) {
+                    console.log(res);
+                    renderSuggestList(res)
+                }
+            })
+        }
+
+        // 5、通过缓存提高搜索速率，减少请求次数
+        // 5.1 缓存对象
+        let localStore = {}
+
+        // 3、将获取到的数据添加到模板引擎，渲染到页面中
+        function renderSuggestList(data) {
+            if (data.result.length <= 0) {
+                return $("#suggest-list").empty().hide()
+            }
+            // 渲染模板结构
+            let temp = template("suggest-tmp", data)
+            $("#suggest-list").html(temp).show()
+
+            // 5.2 设置缓存对象键值，键：用户输入的搜索值 值：ajax返回的数据
+            let key = $(".ipt").val().trim()
+            localStore[key] = data
+        }
+
+
+
+
+
+        // 切换搜索的店铺和内容
+        let inputs = $(".tabs").children("div")
+        inputs.each(function(index, item) {
+            $(this).on("click", function() {
+                $("#suggest-list").empty().hide()
+                $(this).addClass("tab-active").siblings().removeClass("tab-active")
+                let index = $(this).index()
+                console.log(index);
+                $(".search-box input").eq(index).show().siblings("input").hide()
+            })
+        })
+    })
+</script>
+
+</html>

@@ -1,0 +1,166 @@
+/* 侧边栏 */
+body{
+    background-color: #f6f6f6;
+}
+.body{
+    margin-top: 20px;
+}
+aside{
+    float: left;
+    margin-right: 20px;
+    padding-top: 15px;
+    width: 225px;
+    height: 1240px;
+    background-color: white;
+}
+aside dt{
+    padding: 25px 109px 0px 52px;
+    margin-bottom: 15px;
+}
+aside dd{
+    position: relative;
+    padding: 15px 103px 10px 52px;
+    font-size: 14px;
+    color: #666;
+}
+aside a:hover{
+    color: #5cb99e;
+}
+aside a:hover::before{
+    content: "";
+    position: absolute;
+    left: 35px;
+    top: 20px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #5eb69c;
+}
+aside dd:nth-last-child{
+    margin-bottom: 26px;
+}
+aside hr{
+    width: 224px;
+	height: 2px;
+    border: 0;
+	background-color: #f4f4f4;
+}
+/* 内容区块 */
+section{
+    float: right;
+    width: 994px;
+}
+/* section .userinfo{
+	height: 132px;
+    background-image: url("../uploads/discuss_goods_2.jpg");
+    
+} */
+section{
+    position: relative;
+}
+.userinfo{
+    height: 132px;
+}
+.userinfo::before{
+    /* 设置用户信息背景图片不透明度 */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 132px;
+    background-image: url("../uploads/discuss_goods_2.jpg");
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+.userinfo .user{
+    float: left;
+}
+.userinfo img{
+    position: absolute;
+    top: 23px;
+    left: 59px;
+    width: 85px;
+    height: 86px;
+}
+.userinfo span{
+    position: absolute;
+    top: 58px;
+    left: 170px;
+    font-size: 18px;
+    color: rgb(121, 119, 119);
+}
+.userinfo li{
+    float: right;
+    margin-right: 107px;
+    margin-top: 37px;
+    width: 64px;
+    height: 61px;
+}
+.userinfo li a{
+    color: #fff;
+}
+.userinfo li a::before{
+    content: "";
+    display: block;
+    margin-left: 17px;
+    margin-bottom: 5px;
+    width: 30px;
+    height: 26px;
+    background-image: url(../images/sprites.png);
+    background-position: -15px -17px;
+}
+.myOrder{
+    margin-top: 20px;
+    background-color: #fff;
+}
+.myOrder .header{
+    height: 61px;
+}
+.myOrder .header h3{
+    float: left;
+    line-height: 61px;
+    font-size: 19px;
+    color: #333;
+}
+.myOrder .header span{
+    float: right;
+    margin-right: 13px;
+    line-height: 61px;
+    color: #999;
+}
+.myOrder .order li{
+    width: 971;
+    height: 137px;
+    margin: 0 13px 12px;
+    border: 1px solid #e8e8e8;
+}
+.myOrder .order li .goodsinfo{
+    display: inline-block;
+    width: 593px;
+    border-right: 2px solid #e8e8e8;;
+} 
+.myOrder .order li img{
+    float: left;
+    width: 106px;
+    height: 106px;
+    margin: 17px 10px 14px 13px;
+}
+.myOrder .order .detail{
+    float: left;
+    margin-top: 44px;
+}
+.myOrder .order .detail p{
+    font-size: 14px;
+    color: #999;
+}
+.myOrder .order span{
+    float: left;
+    margin-top: 44px;
+    margin-left: 127px;
+    font-size: 14px;
+    color: #e05e30;
+}
+

@@ -1,0 +1,376 @@
+/*默认全局样式*/
+* {
+    margin: 0;
+    padding: 0;
+    /* 內减模式 */
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+body {
+    background-color: #f3f5f7;
+}
+/*版心居中样式*/
+.wrapper{
+    margin:0 auto;
+    width: 1200px;
+}
+
+/*头部样式*/
+.header{
+    height: 42px;
+    /*background-color: pink;*/
+    margin:30px auto;
+}
+/*头部的logo样式*/
+h1 {
+    float: left;
+    margin-right: 65px;
+}
+/*头部的导航条样式*/
+.header .nav{
+    float: left;
+}
+.header .nav li{
+    display: inline-block;
+}
+.header .nav li a{
+    height: 42px;
+    padding:0 10px 9px;
+    margin-right: 24px;
+    line-height: 42px;
+    color: #050505;
+}
+.header .nav li a:hover{
+    border-bottom: 2px solid #00a4ff;
+}
+/*头部的搜索框*/
+.search{
+    float: left;
+    margin-left: 60px;
+    width: 412px;
+    height: 40px;
+    border:1px solid #00a4ff;
+}
+.search input{
+    float: left;
+    width: 360px;
+    height: 38px;
+    border:0;
+}
+.search input::placeholder{
+    padding-left: 20px;
+    font-size: 12px;
+    color: #adb4b9;
+}
+.search img{
+    /*float解决换行时产生的间隔*/
+    float: left;
+    width: 50px;
+    height: 38px;
+    border: 0;
+}
+/*用户头像及名称*/
+.userinfo{
+    float: left;
+    height: 30px;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+.userinfo img{
+    /*垂直对其*/
+    vertical-align: middle;
+}
+.userinfo .username{
+    line-height: 30px;
+    font-size: 14px;
+    color: #666666;
+}
+
+/*轮播图区域*/
+.banner{
+    /*最底部*/
+    width: 100%;
+    height: 420px;
+    background-color: #1c036c;
+}
+.banner .wrapper{
+    /*中间的轮播图片*/
+    height: 420px;
+    background-image: url("../images/banner2.png");
+}
+.banner .left{
+    /*左部分*/
+    float: left;
+
+    /*给li里面的a标签添加前后的间距*/
+    padding: 10px 0px 20px 30px;
+    /*给li里面的a标签添加行高
+    行高属于控制文字的属性，能继承*/
+    line-height: 44px;
+
+    width: 190px;
+    height: 420px;
+    background-color: rgba(0,0,0,0.3);
+}
+.banner .left span{
+    float: right;
+    margin-right: 30px;
+}
+.banner .left a{
+    color: white;
+}
+.banner .left a:hover{
+    color: #00b4ff;
+}
+.banner .right{
+    /*右部分*/
+    float: right;
+    width: 228px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: #ffffff;
+}
+.banner .right h2{
+    height:48px;
+    background-color: #9cbeea;
+    text-align: center;
+    color: white;
+    line-height: 48px;
+}
+.banner .right .content{
+    padding: 0px 20px;
+}
+.banner .right dl{
+    padding: 10px 0px;
+    border-bottom: 2px solid #efefef;
+}
+.banner .right dt{
+    font-size: 16px;
+}
+.banner .right dd{
+    font-size: 14px;
+    color: #4e4e4e;
+}
+.banner .right a{
+    display: inline-block;
+    width: 200px;
+    height: 42px;
+    margin: 6px 10px 8px 13px;
+    text-align: center;
+    line-height: 42px;
+    color: #00a4ff;
+    border: solid 1px #00a4ff;
+}
+
+/*精品推荐列表*/
+.goods{
+    padding-left: 20px;
+    margin-top: 10px;
+    height: 60px;
+    box-shadow: 0px 2px 3px 0px
+    rgba(118, 118, 118, 0.2);
+}
+.goods li{
+    float: left;
+    margin: 20px 0 20px 20px;
+    padding-right: 20px;
+}
+.goods li:nth-child(n){
+    border-right: 1px solid #bfbfbf;
+}
+.goods li:nth-last-child{
+    border-right: 0;
+}
+.goods h4{
+    color: #00a4ff;
+}
+.goods a{
+    color: #454545;
+}
+.goods .change{
+    /*修改推荐*/
+    float: right;
+    padding-right: 30px;
+    line-height: 60px;
+    color: #00a4ff;
+}
+.goods .change a{
+    color: #00a4ff;
+}
+
+/*精品推荐课程*/
+.box .goodsListTop{
+    margin-top: 20px;
+    height: 60px;
+    /*background-color: #fff;*/
+    /*box-shadow: 0px 2px 3px 0px*/
+    /*rgba(118, 118, 118, 0.2)*/
+}
+.box .goodsListTop h3{
+    float: left;
+    line-height: 60px;
+    font-size: 20px;
+    color: #494949;
+}
+.box .goodsListTop a{
+    float: right;
+    margin-right: 30px;
+    line-height: 60px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+.box .goodsList li{
+    float: left;
+    position: relative;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+    box-shadow: 0px 1px 5px 0px
+    rgba(118, 118, 118, 0.5);
+}
+.box .goodsList li a .hot{
+    position: absolute;
+    width: 40px;
+    top:4px;
+    right: -4px;
+}
+.box .goodsList li:nth-child(5n){
+    margin-right: 0;
+}
+.box .goodsList li img{
+    width: 227px;
+}
+.box .goodsList li h3{
+    padding:10px 20px;
+    font-size: 16px;
+    color: #606060;
+    font-weight: 400;
+}
+.box .goodsList li  p{
+    padding: 10px 20px;
+    font-size: 12px;
+}
+.box .goodsList li  p span{
+    color: #ff7c2d;
+}
+
+/*编程入门*/
+.program{
+
+}
+.program .top{
+    margin-top: 20px;
+    height: 40px;
+}
+.program .top .left{
+    float: left;
+    line-height: 40px;
+    color: #494949;
+    font-size: 20px;
+    margin-right: 350px;
+}
+.program .top a{
+    float: right;
+    margin-right: 28px;
+    line-height: 40px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+.program .top .middle li{
+    float: left;
+    margin-right: 67px;
+}
+.program .top .middle li a{
+    font-size: 16px;
+    color: #868686;
+}
+.program .top .middle li a:hover{
+    color: #00a4ff;
+}
+.program .content {
+    height: 391px;
+}
+.program .content .left{
+    float: left;
+}
+.program .content .right .top{
+    float: right;
+    margin-top: 0px;
+    width: 957px;
+    height: 100px;
+}
+.program .content .right .bottom li{
+    float: left;
+    height: 270px;
+    width: 228px;
+    background-color: #fff;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.program .content .right .bottom h3{
+    margin: 20px 16px 20px 20px;
+    color: #050505;
+}
+.program .content .right .bottom p{
+    margin: 0 0 0 20px;
+    color: #606060;
+}
+.program .content .right .bottom p span{
+    color: #ff7c2d;
+}
+
+    /*底部版权*/
+.footer{
+    margin-top: 30px;
+    padding-top: 30px;
+    height: 417px;
+    background-color: white;
+}
+.footer .left{
+    float: left;
+
+}
+.footer .left p{
+    margin-top: 30px;
+}
+.footer .left a{
+    display: block;
+    margin-top: 20px;
+    width: 120px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border: solid 1px #00a4ff;
+    color: #00a4ff;
+}
+.footer .right{
+    float: right;
+    margin-left: 30px;
+}
+.footer .right dl{
+    display: inline-block;
+    margin: 35px 100px 0 0;
+}
+.footer .right dl:last-child{
+    margin-right: 30px;
+}
+.footer .right dt{
+    margin-bottom: 14px;
+    font-size: 16px;
+}

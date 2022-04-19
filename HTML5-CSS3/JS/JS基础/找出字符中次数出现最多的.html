@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let str = "aaassssddddd"
+            // 建立空对象存放数据
+        let newStr = {}
+            // 1 遍历字符，取出每一个字符
+        for (let i = 0; i < str.length; i++) {
+            let temp = str.charAt(i)
+                // 2 判断该字符是否在新字符串中存在
+            if (newStr[temp]) {
+                // 2.1 存在就继续加1
+                newStr[temp]++
+            } else {
+                // 2.2 不存在就添加一个
+                newStr[temp] = 1
+            }
+        }
+        console.log(newStr);
+
+        let max = 0 // 最大值
+        let k = 0 // 拥有最大值的属性
+            // 3 遍历对象
+        for (let key in newStr) {
+            // 3.1 将属性值提取出来进行比大小
+            if (newStr[key] > max) {
+                max = newStr[key]
+                k = key
+            }
+        }
+        console.log(max);
+        console.log(k);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

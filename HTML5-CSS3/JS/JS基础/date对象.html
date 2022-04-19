@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let datetime = new Date()
+        let YYYY = datetime.getFullYear()
+        let MM = addZero(datetime.getMonth() + 1)
+        let DD = addZero(datetime.getDate())
+        let week = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
+        let weekIndex = datetime.getDay()
+        let hh = addZero(datetime.getHours())
+        let mm = addZero(datetime.getMinutes())
+        let ss = addZero(datetime.getSeconds())
+        console.log(`${YYYY}-${MM}-${DD} ${week[weekIndex]} ${hh}:${mm}:${ss}`);
+
+        function addZero(time) {
+            return time <= 9 ? "0" + time : time
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

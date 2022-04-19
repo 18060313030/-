@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let oldArr = [1, 23, 55, 23, 67, 55, 34, 34]
+        let newArr = []
+            // 遍历数组
+        oldArr.forEach((item) => {
+            // 新数组没有有对应元素
+            if (newArr.indexOf(item) === -1) {
+                // 将元素添加到新数组
+                newArr.push(item)
+            }
+        })
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

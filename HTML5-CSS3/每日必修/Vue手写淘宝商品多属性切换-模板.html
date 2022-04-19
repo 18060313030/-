@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        .box {
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 30px;
+        }
+        
+        .box a {
+            display: inline-block;
+            border: 1px solid grey;
+            text-decoration: none;
+            color: #000;
+            margin: 5px 5px;
+            padding: 5px;
+            background-color: #ededed;
+        }
+        
+        .box a:hover {
+            background-color: red;
+            color: #fff;
+        }
+        
+        .box a.active {
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="box">
+            <div>
+                <a href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // https://mp.weixin.qq.com/s?__biz=MzI5MDA2OTgyMA==&mid=2247483825&idx=1&sn=3416e6415299cbf5256e7a3f8721b1d3&chksm=ec24cde2db5344f4700d6eb61e43525cee23a46c1c78ea34c68942064ab5f139bb421d8b997c&mpshare=1&scene=23&srcid=0414jCWQ4k0kXO8Y145G2B99&sharer_sharetime=1649904648007&sharer_shareid=5a2751af388c5eca3e2ba956ac1109b2#rd
+    let vm = new Vue({
+        el: "#app",
+        data() {
+            return {
+                // 数据源
+                mockData: {
+                    json1: [
+                        ["红色", "黄色", "蓝色"],
+                        ["S", "M"],
+                        ["棉的", "涤纶"],
+                    ],
+                    json2: [{
+                        color: "红色",
+                        type: "S",
+                        mianliao: "棉的",
+                        price: 100,
+                    }, {
+                        color: "红色",
+                        type: "M",
+                        mianliao: "棉的",
+                        price: 200,
+                    }, {
+                        color: "红色",
+                        type: "S",
+                        mianliao: "涤纶",
+                        price: 300,
+                    }, {
+                        color: "红色",
+                        type: "M",
+                        mianliao: "涤纶",
+                        price: 400,
+                    }, {
+                        color: "黄色",
+                        type: "S",
+                        mianliao: "棉的",
+                        price: 500,
+                    }, {
+                        color: "黄色",
+                        type: "M",
+                        mianliao: "棉的",
+                        price: 600,
+                    }, {
+                        color: "黄色",
+                        type: "S",
+                        mianliao: "涤纶",
+                        price: 700,
+                    }, {
+                        color: "黄色",
+                        type: "M",
+                        mianliao: "涤纶",
+                        price: 800,
+                    }, {
+                        color: "蓝色",
+                        type: "S",
+                        mianliao: "棉的",
+                        price: 900,
+                    }, {
+                        color: "蓝色",
+                        type: "M",
+                        mianliao: "棉的",
+                        price: 1000,
+                    }, {
+                        color: "蓝色",
+                        type: "S",
+                        mianliao: "涤纶",
+                        price: 1100,
+                    }, {
+                        color: "蓝色",
+                        type: "M",
+                        mianliao: "涤纶",
+                        price: 1200,
+                    }, ]
+                },
+
+            }
+        },
+    })
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/TodoList.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/TodoList.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header_main wrapper">
+            <h1>
+                TodoList
+            </h1>
+            <div class="right">
+                <input type="text" placeholder="添加todo" id="title">
+            </div>
+        </div>
+    </header>
+
+    <div class="body wrapper">
+        <div class="body_todo task">
+            <div class="top">
+                <h2>正在进行</h2>
+                <i>1</i>
+            </div>
+            <div class="main">
+                <ul>
+                    <li>
+                        <input type="checkbox" class="checkbox">
+                        <label>xxxxxx</label>
+                        <input type="text" class="text">
+                        <button>修改</button>
+                        <a href="">删除</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="body_done task">
+            <div class="top">
+                <h2>已完成</h2>
+                <i>1</i>
+            </div>
+            <div class="main">
+                <ol class="opcity">
+
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

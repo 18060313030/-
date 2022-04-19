@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function changeColor() {
+        let R = Math.floor(Math.random() * 255)
+        let G = Math.floor(Math.random() * 255)
+        let B = Math.floor(Math.random() * 255)
+        document.body.style.background = `rgb(${R},${G},${B})`
+        console.log(this);
+    }
+
+    function throttle(fn, delay) {
+        let preDate = 0 // 预定义一个初始值
+        return () => {
+            let nowDate = new Date() // 触发事件时的时间
+            if (nowDate - preDate > delay) { // 当前时间减去开始的时间，如果大于延时时间
+                fn.call(this) // 改变this的指向到调用该函数的对象上
+                preDate = nowDate // 将当前时间赋值给下一轮的开始时间
+            }
+        }
+    }
+
+    window.addEventListener("resize", throttle(changeColor, 1000))
+</script>
+
+</html>

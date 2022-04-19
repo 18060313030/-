@@ -1,0 +1,112 @@
+@import 'base';
+
+@vm: 3.75vw;
+
+
+// 头部区域
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: (84 / @vm);
+    z-index: 999;
+    background-color: #fff;
+    .top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 (12 / @vm) 0 (18 / @vm);
+        height: (44 / @vm);
+        .left{
+            .iconfont{
+                font-size: (26 / @vm);
+                color: #fb7299;
+            }
+        }
+        .right{
+            display: flex;
+            .iconfont{
+                font-size: (22 / @vm);
+            }
+            .login{
+                width: (24 / @vm);
+                height: (24 / @vm);
+                margin-left: (24 / @vm);
+            }
+            .download{
+                width: (72 / @vm);
+                height: (24 / @vm);
+                margin-left: (24 / @vm);
+            }
+        }
+    }
+    .bottom{
+        display: flex;
+        justify-content: space-between;
+        height: (40 / @vm);
+        border-bottom: 1px solid #eee;
+        .more{
+            a{
+                display: block;
+                width: (40 / @vm);
+                height: (40 / @vm);
+                line-height: (40 / @vm);
+                text-align: center;
+                color: #ccc;
+                .iconfont{
+                    font-size: 20px;
+                }
+            }
+        }
+        .tab{
+            ul{
+                display: flex;
+                li{
+                    margin: 0 (12 / @vm);
+                    line-height: 38px;
+                    a{
+                        &.current{
+                            display: inline-block;
+                            height: (38 / @vm);
+                            color: #fb7299;
+                            border-bottom: 2px solid #fb7299;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 视频区域
+section{
+    padding:  (84 / @vm) (5 / @vm) 0;
+    .videoIndex{
+        display: flex;
+        flex-wrap: wrap;
+        a{
+            width: 50%;
+            padding: (8 / @vm) (5 / @vm);
+            font-size: (12 / @vm);
+            .pic{
+                position: relative;
+                margin-bottom: (5 / @vm);
+                .count{
+                    display: flex;
+                    justify-content: space-between;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    padding: (8 / @vm);
+                    width: 100%;
+                    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+                    color: white;
+                    i{
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+}

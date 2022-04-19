@@ -1,0 +1,165 @@
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.reg_top {
+    margin-top: 12px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #b1191a;
+}
+
+.reg_body {
+    margin-top: 21px;
+    width: 1198px;
+    height: 520px;
+    background-color: #ffffff;
+    border: solid 1px #dfdfdf;
+}
+
+.reg_body .top {
+    width: 1198px;
+    height: 41px;
+    line-height: 40px;
+    padding: 0 10px;
+    background-color: #ececec;
+}
+
+.reg_body .top h4 {
+    float: left;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.reg_body .top p {
+    float: right;
+    font-size: 14px;
+}
+
+.reg_body .top p a {
+    color: #c81623;
+}
+
+.reg_body .body {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 600px;
+    height: 400px;
+}
+
+.reg_body .body li {
+    margin-bottom: 20px;
+}
+
+.reg_body .body label {
+    display: inline-block;
+    width: 90px;
+    font-size: 14px;
+    text-align: right;
+}
+
+.reg_body .body .ipt {
+    margin: 0 5px;
+    width: 240px;
+    height: 36px;
+    border: 1px solid #999;
+}
+
+.reg_body .body .error {
+    color: #df3033;
+}
+
+.reg_body .body .error_icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    margin-right: 5px;
+    height: 20px;
+    background-image: url("../images/error.png");
+}
+
+.reg_body .body .success {
+    color: green;
+}
+
+.reg_body .body .success_icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/success.png");
+}
+
+.safe {
+    padding-left: 161px;
+}
+
+.safe em {
+    display: inline-block;
+    margin-left: 3px;
+    width: 34px;
+    height: 12px;
+    text-align: center;
+    line-height: 12px;
+    color: #fff;
+}
+
+.safe .weak {
+    background-color: #de1111;
+}
+
+.safe .medium {
+    background-color: #40b83f;
+}
+
+.safe .strong {
+    background-color: #f79100;
+}
+
+#check {
+    width: 16px;
+    height: 15px;
+    vertical-align: text-bottom;
+}
+
+.reg_body .body .check {
+    margin-left: 100px;
+}
+
+.reg_body .body .check label {
+    line-height: 14px;
+    margin-left: 3px;
+    width: auto;
+}
+
+.reg_body .body .check a {
+    color: #1ba1e6;
+}
+
+.reg_body .body .btn {
+    margin-left: 100px;
+    width: 200px;
+    height: 34px;
+    background-color: #c81623;
+    color: #fff;
+    text-align: center;
+    line-height: 34px;
+    cursor: pointer;
+}
+
+
+/* 底部区域 */
+
+.foo_info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.foo_info a {
+    padding: 0 5px;
+}
+
+.foo_info p {
+    margin-bottom: 5px;
+}

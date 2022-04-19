@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+    .container{
+        width: 1226px;
+        height: 614px;
+        /*background-color: pink;*/
+        margin: 0 auto;
+    }
+    .container .left{
+        float: left;
+        width: 234px;
+        height: 614px;
+        background-color: #a6fca9;
+    }
+    .container .right{
+        float: right;
+        display: inline-block;
+        width: 978px;
+        height:614px;
+        /*background-color: #ff8500;*/
+    }
+    .container .right ul{
+        list-style:none;
+    }
+    .container .right li{
+        display: inline-block;
+        width: 234px;
+        height: 300px;
+        background-color: skyblue;
+    }
+      .container .right li:nth-child(-n+4){
+          margin-bottom: 14px;
+      }
+      .container .right li:nth-child(n){
+          margin-right: 9px;
+      }
+      .container .right li:nth-child(4n){
+          margin-right: 0;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left"></div>
+    <div class="right">
+      <ul>
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+        <li>第6个</li>
+        <li>第7个</li>
+        <li>第8个</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

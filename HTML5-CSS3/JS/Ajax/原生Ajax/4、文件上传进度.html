@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+</head>
+
+<body>
+    <!-- 1、定义UI结构 -->
+    <form action="">
+        <input type="file" id="myFile" name="avatar">
+        <button id="btn">上传</button>
+        <br/>
+
+        <!-- 进度条 -->
+        <div class="progress" style="width: 300px; margin: 15px;">
+            <div class="progress-bar progress-bar-striped active" style="width: 0%" id="percent">
+                0%
+            </div>
+        </div>
+
+        <!-- 显示图片 -->
+        <img src="" alt="">
+    </form>
+</body>
+<script>
+    // 点击上传按钮
+    let btn = document.querySelector("#btn")
+    btn.addEventListener("click", function(e) {
+        // 阻止表单默认提交行为
+        e.preventDefault()
+
+        // 获取上传的文件信息
+        let files = document.querySelector("#myFile").files
+        console.log(files);
+
+        // 如果未上传文件，提示
+        if (files.length <= 0) {
+            return alert("请上传文件")
+        }
+        let xhr = new XMLHttpRequest() // 创建对象
+        let form = document.querySelector("form") // 获取表单元素
+
+        let fd = new FormData(form) // 创建FormData对象,并将表单数据自动添加到对象中
+            // fd.append("avatar", files[0]) // 为表单对象添加表单项
+
+        let progressBar = document.querySelector("#percent")
+
+        // 监听文件上传进度
+        xhr.upload.onprogress = function(e) {
+            // e.lengthComputable 是一个布尔值，表示当前上传的资源是否具有可计算的长度
+            if (e.lengthComputable) {
+                let percent = Math.ceil((e.loaded / e.total) * 100) // loaded已传输字节  total总传输字节
+                console.log(percent);
+
+                progressBar.className = "progress-bar progress-bar-striped active" // 成功之后进度条样式会变化，重新上传文件时需要改回来
+
+                // 修改进度条样式和显示内容
+                progressBar.style = "width: " + percent + "%"
+                progressBar.innerHTML = percent + "%"
+            }
+        }
+
+        // 监听文件上传完毕，修改进度条样式
+        xhr.upload.onload = function() {
+            progressBar.className = "progress-bar progress-bar-success"
+        }
+
+        xhr.open("POST", "http://www.liulongbin.top:3006/api/upload/avatar")
+        xhr.send(fd)
+
+        // 监听事件
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                let data = JSON.parse(xhr.responseText)
+                console.log(data);
+                if (data.status === 200) {
+                    document.querySelector("img").src = "http://www.liulongbin.top:3006" + data.url
+                } else {
+                    alert(data.message)
+                }
+            }
+        }
+    })
+</script>
+
+</html>

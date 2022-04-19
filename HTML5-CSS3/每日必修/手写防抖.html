@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+</body>
+<script>
+    let input = document.querySelector("input")
+
+    function inputInfo() {
+        console.log("ok");
+        console.log(this);
+    }
+    // 问题点1：debounce此时内部函数的this指向window  因为回调函数是在window下执行
+    input.oninput = debounce(inputInfo, 1000)
+
+    function debounce(fn, delay) {
+        // 定时器名称定义在返回函数的外面:返回函数根据作用域链,查找到外层的timer,这些定时器都是使用同一个timer
+        // 定义在返回函数里面:因为每个函数都是独立的作用域，互不干扰，timer都是表示各自定时器的timer，无法完成定时器的统一清理，点击几次还是会打印出几次
+        let timer = null
+
+        // return function() {
+        //     if (timer) clearTimeout(timer)
+        //     let context = this // 解决问题点1：保存this(this指向调用它的对象，即input)
+        //     let args = arguments
+        //     timer = setTimeout(function() {
+        //         fn.call(context) // 解决问题点1、2：使用apply修改this的指向、并传入参数
+        //     }, delay)
+        // }
+        // 可以使用上面注释的，也可以使用下面的，区别在于一个使用了箭头函数，this不用保存到变量中
+        return function() {
+            if (timer) clearTimeout(timer) // 闭包里清除timer的时候用的如果是timer=null，而不是clearTimeout(timer)函数。那么在用timer=null 的时候，只是改变了timer的指向，并没有清除掉定时器，此时定时器在内存中虽然没有变量指向它，但它仍存在内存中，待delay时间一到，就执行fn函数。当fn经过防抖函数限制后，在delay时间内调用多少次fn函数，就会有多少次的定时器存在内存中，就会执行多少此fn函数，并不能实现预期中的在delay时间内只执行一次fn函数。
+
+            // let args = arguments
+            timer = setTimeout(() => {
+                fn.call(this) // 解决问题点1：使用call修改this的指向
+            }, delay)
+        }
+    }
+</script>
+
+</html>

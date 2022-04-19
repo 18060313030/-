@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function randomNum(min, max) {
+            var rand = Math.floor(Math.random() * (max - min + 1)) + min;
+            return rand
+        }
+        let stuArr = ["张三", "李四", "王五", "赵六"]
+        let num = randomNum(0, stuArr.length - 1)
+        console.log(stuArr[num]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

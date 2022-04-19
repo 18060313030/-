@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+        }
+        
+        li {
+            width: 200px;
+            height: 50px;
+            background-color: grey;
+            margin: 20px 20px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+<script>
+    let lis = document.querySelectorAll("li")
+    for (let i = 0; i < lis.length; i++) {
+        lis[i].addEventListener("click", function() {
+            for (let j = 0; j < lis.length; j++) {
+                lis[j].style.backgroundColor = "grey"
+            }
+            this.style.backgroundColor = "pink"
+        })
+    }
+</script>
+
+</html>

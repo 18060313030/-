@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text">
+        <button>发送</button>
+    </div>
+</body>
+<script>
+    // 按钮点击之后，会禁用 disabled 为true 
+    // 同时按钮里面的内容会变化， 注意 button 里面的内容通过 innerHTML修改
+    // 里面秒数是有变化的，因此需要用到定时器
+    // 定义一个变量，在定时器里面，不断递减
+    // 如果变量为0 说明到了时间，我们需要停止定时器，并且复原按钮初始状态。
+
+    window.onload = function() {
+        let btn = document.querySelector("button")
+        let countDown = 5
+        btn.addEventListener("click", function() {
+            btn.disabled = true
+            btn.innerHTML = "倒计时" + 5
+            let timer = setInterval(function() {
+                if (countDown > 1) {
+                    countDown--
+                    btn.innerHTML = "倒计时" + countDown
+                } else {
+                    clearInterval(timer)
+                    btn.disabled = false
+                    btn.innerHTML = "发送"
+                    countDown = 5
+                }
+            }, 1000)
+        })
+    }
+</script>
+
+</html>

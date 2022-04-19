@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>位移-基本使用</title>
+    <style>
+        div{
+            margin: 0 auto;
+            width: 1366px;
+            height: 600px;
+            background-image: url("./images/bg.jpg");
+            overflow: hidden;
+        }
+        div::after,
+        div::before{
+            content: "";
+            float: left;
+            width: 50%;
+            height: 600px;
+            background-image: url("./images/fm.jpg");
+            transition: all 1s;
+        }
+        div::after{
+            background-position: right 0;
+        }
+        div:hover::after{
+            transform: translateX(100%);
+        }
+        div:hover::before{
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+       
+    </div>
+</body>
+
+</html>

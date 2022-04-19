@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        margin: 100px auto;
+        width: 400px;
+    }
+    
+    .box input {
+        float: left;
+        width: 200px;
+        height: 20px;
+        outline: none;
+    }
+    
+    .msg {
+        line-height: 24px;
+        margin-left: 220px;
+        text-indent: 1.2em;
+        background: url("./images/mess.png") no-repeat left center;
+        font-size: 14px;
+        color: rgb(49, 133, 211);
+    }
+    
+    .success {
+        color: green;
+        background-image: url("./images/right.png");
+    }
+    
+    .fail {
+        color: red;
+        background-image: url("./images/wrong.png");
+    }
+</style>
+
+<body>
+    <div class="box">
+        <input type="text">
+        <p class="msg">请输入6~16位的账号</p>
+    </div>
+</body>
+<script>
+    let input = document.querySelector("input")
+    let p = document.querySelector("p")
+    input.onblur = function() {
+        if (input.value.length < 6 || input.value.lengt > 16) {
+            p.className = "fail msg"
+        } else {
+            p.className = "success msg"
+            p.innerHTML = "验证通过"
+        }
+    }
+</script>
+
+</html>

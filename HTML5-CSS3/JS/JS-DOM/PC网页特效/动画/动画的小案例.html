@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./animate_move.js"></script>
+    <style>
+        .slider {
+            position: fixed;
+            top: 300px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+            background-color: pink;
+            cursor: pointer;
+        }
+        
+        .arrow {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: pink;
+        }
+        
+        .hideBar {
+            position: absolute;
+            top: 0;
+            left: 0px;
+            width: 160px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+            background-color: aqua;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider">
+
+        <div class="arrow">⬅</div>
+        <div class="hideBar">这是一个测试</div>
+    </div>
+</body>
+<script>
+    let slider = document.querySelector(".slider")
+    let hideBar = document.querySelector(".hideBar")
+        // 悬停在slider上
+    slider.addEventListener("mouseenter", function() {
+            move(hideBar, -160, function() {
+                slider.children[0].innerHTML = "➡"
+            })
+        })
+        // 离开slider
+    slider.addEventListener("mouseleave", function() {
+        move(hideBar, 0, function() {
+            slider.children[0].innerHTML = "⬅"
+        })
+    })
+</script>
+
+</html>

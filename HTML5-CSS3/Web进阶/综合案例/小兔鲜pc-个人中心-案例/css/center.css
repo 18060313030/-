@@ -1,0 +1,255 @@
+.xtx_body{
+    padding: 30px 0 85px;
+    background-color: #f6f6f6;
+}
+
+.xtx_body .wrapper{
+    display: flex;
+
+}
+/* 侧边栏 */
+/* 头部区域 */
+.xtx_body .aside{
+    margin-right: 18px;
+    padding-bottom: 36px;
+    width: 227px;
+    min-height: 500px;
+    background-color: white;
+}
+.xtx_body .aside .user{
+    padding: 47px 76px 32px 69px;
+}
+.xtx_body .aside .user img{
+    width: 85px;
+    height: 85px;
+}
+.xtx_body .aside .user h3{
+    margin: 10px 0 12px 15px;
+}
+.xtx_body .aside .user a:nth-child(2){
+    position: relative;
+    display: inline-block;
+    margin-left: -5px;
+    width: 93px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    text-indent: 1.5em;
+    background-image: linear-gradient(264deg, 
+		#e05e2f 0%, 
+		#ea745e 95%,
+		#e4973c 100%);
+    border-radius: 13px;
+    color: #f9f9f9;
+}
+.xtx_body .aside .user a:nth-child(2)::after{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 15px;
+    height: 16px;
+    background-image: url("../images/vip_gold.png");
+}
+/* 列表选项区域 */
+.xtx_body .aside .list ul{
+    width: 230px;
+    border-top: 1px solid #f4f4f4;
+}
+.xtx_body .aside .list li:nth-child(1){
+    margin: 33px 100px 32px 55px;
+    font-size: 18px;
+}
+.xtx_body .aside .list li{
+    position: relative;
+    margin: 0 80px 25px 53px;
+}
+.xtx_body .aside .list li a:hover{
+    color: #5cb99e;
+}
+.xtx_body .aside .list li a:hover::before{
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: -15px;
+    width: 6px;
+    height: 6px;
+    background-color: #5cb99e;
+    border-radius: 50%;
+}
+
+
+/* 主体区域 */
+/* 第一个 */
+.xtx_body .main{
+    flex: 1;
+    min-height: 200px;
+}
+.overview{
+    display: flex;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    height: 132px;
+    background-color: white;
+}
+.overview div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+.overview div:nth-child(1){
+    border-right: 1px solid #f4f4f4;
+}
+.overview div:nth-child(1) img{
+    width: 25px;
+    height: 23px;
+    margin-bottom: 10px;
+}
+.overview div:nth-child(1) a:nth-child(3) img{
+    width: 18px;
+    height: 25px;
+}
+.overview div:nth-child(2) span{
+    font-size: 25px;
+    color: #e05e30;
+}
+.overview div:nth-child(2) p{
+    font-size: 16px;
+}
+
+
+/* 第二个至最后的头部及面板公共样式 */
+.pannel{
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+.pannel_title{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f4f4f4;
+    height: 45px;
+}
+.pannel_title h4{
+    font-size: 22px;
+}
+.pannel_title a{
+    margin-top: 8px;
+    font-size: 16px;
+    color: #999;
+}
+/* 我的订单 */
+.orders li{
+    display: flex;
+    margin-top: -1px;
+    margin-bottom: 20px;
+    height: 137px;
+    border: 1px solid #f4f4f4;
+}
+.orders li:nth-child(2){
+    margin-bottom: 0;
+}
+.orders li .goods{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin-right: 128px;
+}
+.orders li .goods img{
+    padding: 17px 0 14px 12px;
+    width: 107px;
+    height: 107px;
+}
+.orders li .goods .text p{
+    color: #999;
+}
+/* 在弹性盒子下设置省略号 */
+.orders li .goods .text{
+    flex: 1;
+    width: 0;
+}
+.orders li .goods .text h5{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.orders li .status{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 120px;
+    color: #e05e30;
+}
+.orders li .status p:nth-child(2){
+    margin-left: -7px;
+    color: #999;
+}
+.orders li .pay{
+    width: 200px;
+    border: 1px solid #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.orders li .pay p:first-child{
+    color: #9a2e1f;
+}
+.orders li .action{
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.orders li .action a:first-child{
+    width: 100px;
+    height: 30px;
+    background-color: #5eb69c;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+
+}
+
+/* 第三个：收藏的商品 */
+.collect{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px 35px 40px;
+}
+.collect img{
+    margin-bottom: 18px;
+    width: 160px;
+    height: 160px;
+}
+.collect h5{
+    font-weight: 400px;
+    font-size: 16px;
+}
+.collect p{
+    margin-top: 15px;
+    font-size: 22px;
+    color:  #9a2e1f;;
+}.collect div:nth-child(2){
+    position: relative;
+}
+.collect div:nth-child(2) i{
+    position: absolute;
+    top: 3px;
+    left: -10px;
+    width: 28px;
+    height: 51px;
+    border: solid 1px #5eb69c;
+    text-align: center;
+
+}
+
+
+/* 第四个：我的足迹 */

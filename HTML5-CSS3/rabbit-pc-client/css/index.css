@@ -1,0 +1,262 @@
+/*主页样式表*/
+/* 轮播图区域 */
+.banner{
+    height: 500px;
+}
+.banner .wrapper{
+    position: relative;
+    height: 500px;
+    background-image: url("../uploads/banner_1.png");
+}
+
+.banner .wrapper .side{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.banner .wrapper .side li{
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+}
+.banner .wrapper .side li a{
+    position: relative;
+    display: block;
+    padding-left: 35px;
+    padding-right: 15px;
+    height: 50px;
+    color: white;
+}
+.banner .wrapper .side li a:hover{
+    background-color: #27ba96;
+}
+.banner .wrapper .side li a span{
+    margin-left: 10px;
+}
+.banner .wrapper .side li a::after{
+    position: absolute;
+    content:"";
+    top:18px;
+    right: 18px;
+    width: 8px;
+    height: 15px;
+    background-image: url("../images/sprites.png");
+    background-position: -78px -109px;
+}
+
+.banner .wrapper .arrow .prev{
+    position: absolute;
+    top: 223px;
+    left: 260px;
+    width: 41px;
+    height: 41px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    background-image: url("../images/sprites.png");
+    background-position: 11px -62px;
+}
+.banner .wrapper .arrow .next{
+    position: absolute;
+    top: 223px;
+    right: 10px;
+    width: 41px;
+    height: 41px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    background-image: url("../images/sprites.png");
+    background-position: -25px -62px;
+}
+.banner .wrapper .dot{
+    position: absolute;
+    left: 677px;
+    bottom:30px;
+    height: 8px;
+}
+.banner .wrapper .dot li{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background-color: rgba(255,255,255,0.3);
+}
+.banner .wrapper .dot li:hover{
+    background-color: rgba(255,255,255,1);
+    cursor: pointer;
+}
+
+
+/* 新鲜好物 */
+.goods .header{
+    height: 114px;
+    line-height: 114px;
+}
+.goods .header h3{
+    float: left;
+    height: 29px;
+    font-size: 25px;
+    color: #333;
+}
+.goods .header span{
+    padding-left: 30px;
+    font-size: 16px;
+    color:#999;
+}
+.goods .header a{
+    float: right;
+    color:#999;
+    
+}
+.goods .header a::after{
+    content: "";
+    display: inline-block;
+    padding-left: 20px;
+    width: 7px;
+    height: 13px;
+    background-image: url("../images/sprites.png");
+    background-position: 10px -110px ;
+}
+.goods .content li{
+    display: inline-block;
+    width: 304px;
+    margin-right: 3px;
+}
+.goods .content li:nth-child(4n){
+    margin-right: 0px;
+}
+.goods .content img{
+    width: 304px;
+    height: 305px;
+}
+.goods .detail{
+    width: 304px;
+    height: 110px;
+    background-color: #f0f9f4;
+}
+.goods .detail h3{
+    padding: 20px 0 10px 0;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+}
+.goods .detail h4{
+    margin-top: 5px;
+    text-align: center;
+    font-size: 23px;
+    color: #9a2e1f;
+}
+
+
+/* 生鲜 */
+.fresh{
+    margin-top: 50px;
+}
+.fresh .header{
+    height: 100px;
+    line-height: 100px;
+}
+.fresh .header h3{
+    float: left;
+    font-size: 29px;
+    color: #333;
+}
+.fresh .header li{
+    float: right;
+}
+.fresh .header li a{
+    padding: 1px 7px;
+    margin-right: 6px;
+}
+.fresh .header li a:hover{
+    background-color: #27ba9b;
+}
+.fresh .header .watchAll{
+    float: right;
+    margin-left: 60px;
+    color: #999;
+}
+.fresh .header .watchAll::after{
+    content:"";
+    display: inline-block;
+    margin-left: 10px;
+    width: 7px;
+    height: 13px;
+    background-image: url(../images/sprites.png);
+    background-position: 1px -109px ;
+}
+.fresh .content{
+    position: relative;
+}
+.fresh .content img{
+    float: left;
+    margin-right: 9px;
+    width: 242px;
+    height: 617px;
+}
+.fresh .content li{
+    position: relative;
+    float: left;
+    padding: 8px 29px 0 29px;
+    margin-right: 7px;
+    width: 242px;
+    height: 304px;
+}
+.fresh .content li .public{
+    position: absolute;
+    display: none;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    height: 84px;
+    background-color: #27ba9b;
+}
+.fresh .content li .public h3{
+    margin-top: 19px;
+    margin-bottom: 7px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}
+.fresh .content li .public hr{
+    width: 125px;
+    height: 2px;
+    border: 0;
+    text-align: center;
+    background-color:#a9dbcc;
+}
+
+.fresh .content li .public h5{
+    margin-top: 7px;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+}
+.fresh .content li:hover {
+    border: 1px solid #27ba9b;
+}
+.fresh .content li:hover .public{
+    display: block;
+}
+.fresh .content li:nth-child(4n){
+    margin-right: 0;
+}
+.fresh .content li img{
+    margin: 0 auto;
+    width: 184px;
+    height: 184px;
+}
+.fresh .content li .text{
+    margin-left: 8px;
+}
+.fresh .content li .text h3{
+    font-size: 16px;
+    color: #333;
+}
+.fresh .content li .text p{
+    font-size: 22px;
+    color: #9a2e1f;
+}
+

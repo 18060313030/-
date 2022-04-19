@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 140px;
+            height: 140px;
+            background-image: url("./images/bg.png");
+            animation: 
+                move 0.5s steps(12) infinite, 
+                run 5s linear forwards    
+            ;
+        }
+        @keyframes move {
+            from{
+                background-position: 0 0;
+            }
+            to{
+                background-position: -1680px 0;
+            }
+        }
+        @keyframes run {
+            to{
+                transform: translateX(1000px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./手写的promise.js"></script> -->
+    <script src="./手写Promise-最终封装.js"></script>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 调用手写的promise
+    let p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("ok")
+        }, 1000);
+    })
+
+    p.then(value => {
+        console.log(value);
+    }, reason => {
+        console.log(reason);
+    })
+</script>
+
+</html>

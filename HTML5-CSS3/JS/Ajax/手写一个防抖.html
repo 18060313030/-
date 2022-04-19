@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>清空</button>
+</body>
+<script>
+    let input = document.querySelector("input")
+
+    input.addEventListener("input", debounce(getData, 1000))
+
+    // 封装一个防抖
+    function debounce(fn, await) {
+        let timer = null
+        return args => {
+            if (timer) clearTimeout(timer)
+            timer = setTimeout(fn, await)
+        }
+    }
+
+    // 模拟数据请求方法
+    function getData() {
+        console.log("ok");
+    }
+
+
+
+
+
+
+    document.querySelector("button").addEventListener("click", function() {
+        input.value = ""
+    })
+</script>
+
+</html>

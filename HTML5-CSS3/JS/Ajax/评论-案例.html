@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css" />
+</head>
+
+<body style="padding: 15px;">
+    <!-- 发表信息start -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Panel title</h3>
+        </div>
+        <form action="#" class="panel-body">
+            <div>评论人:</div>
+            <input type="text" class="form-control" name="username">
+            <div>评论：</div>
+            <textarea class="form-control" name="content"></textarea>
+            <button class="btn btn-primary" style="margin-top: 15px;">发表</button>
+        </form>
+    </div>
+    <!-- 发表信息end -->
+
+    <!-- 信息列表start -->
+    <ul class="list-group">
+
+    </ul>
+    <!-- 信息列表end -->
+
+</body>
+<script src="./jquery.js"></script>
+<script>
+    $(function() {
+        getData()
+
+        // 获取数据
+        function getData() {
+            $.get("http://www.liulongbin.top:3006/api/cmtlist", function(res) {
+                console.log(res);
+                if (res.status !== 200) return alert("获取评论列表失败")
+                let data = res.data // 获取数据
+                let li = []
+                    // 遍历数据
+                $.each(data, function(index, item) {
+                    li.push($('<li class="list-group-item"><span class="badge" style="background-color: rgb(3, 196, 196);">发表时间：' + item.time + '</span><span class="badge" style="background-color: rgb(243, 185, 77);">发表人：' + item.username + '</span>' + item.content + '</li>'))
+
+                })
+                $("ul").empty().append(li)
+            })
+        }
+
+        // 发表评论
+        $("form").submit(function(e) {
+            e.preventDefault()
+            let data = $(this).serialize()
+            console.log(data);
+            $.post("http://www.liulongbin.top:3006/api/addcmt", data, function(res) {
+                console.log(res);
+                if (res.status === 500) alert(res.msg)
+                if (res.status !== 201) return alert("添加数据失败")
+                getData()
+                $("form")[0].reset()
+            })
+        })
+    })
+</script>
+
+</html>

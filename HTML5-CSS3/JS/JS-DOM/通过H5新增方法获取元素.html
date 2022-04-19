@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+    <script>
+        // 1、通过getElementsByClassName()获取拥有对应类名元素的集合 伪数组的存放方式
+        let boxs = document.getElementsByClassName("box")
+        console.log(boxs);
+        // 2、通过querySelector()根据指定选择器返回第一个元素对象，就是说如果有多个只返回第一个
+        // 括号里要有对应的标签，类要加. id要加#
+        let box = document.querySelector(".box")
+        console.log(box);
+        // 3、document.querySelectorAll('选择器'); 根据指定选择器返回全部，和getElementsByClassName()差不多
+        let boxs2 = document.querySelectorAll(".box")
+        console.log(boxs2);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        .box {
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 30px;
+        }
+        
+        .box a {
+            display: inline-block;
+            border: 1px solid grey;
+            text-decoration: none;
+            color: #000;
+            margin: 5px 5px;
+            padding: 5px;
+            background-color: #ededed;
+        }
+        
+        .box a:hover {
+            background-color: red;
+            color: #fff;
+        }
+        
+        .box a.active {
+            background-color: red;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="box">
+            <div v-for="(type,index) in mockData.json1" :key="index">
+                <a :class="{active: condition[types[index]] === item}" href="javascript:;" v-for="(item,i) in type" :key="i" @click="changeData(types[index],item)">{{item}}</a>
+            </div>
+        </div>
+        {{showInfo}}
+        <button @click="clear">Clear</button>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data() {
+            return {
+                // 后台数据
+                mockData: {
+                    json1: [
+                        ["红色", "黄色", "蓝色"],
+                        ["S", "M"],
+                        ["棉的", "涤纶"],
+                    ],
+                    json2: [{
+                        color: "红色",
+                        type: "S",
+                        mianliao: "棉的",
+                        price: 100,
+                    }, {
+                        color: "红色",
+                        type: "M",
+                        mianliao: "棉的",
+                        price: 200,
+                    }, {
+                        color: "红色",
+                        type: "S",
+                        mianliao: "涤纶",
+                        price: 300,
+                    }, {
+                        color: "红色",
+                        type: "M",
+                        mianliao: "涤纶",
+                        price: 400,
+                    }, {
+                        color: "黄色",
+                        type: "S",
+                        mianliao: "棉的",
+                        price: 500,
+                    }, {
+                        color: "黄色",
+                        type: "M",
+                        mianliao: "棉的",
+                        price: 600,
+                    }, {
+                        color: "黄色",
+                        type: "S",
+                        mianliao: "涤纶",
+                        price: 700,
+                    }, {
+                        color: "黄色",
+                        type: "M",
+                        mianliao: "涤纶",
+                        price: 800,
+                    }, {
+                        color: "蓝色",
+                        type: "S",
+                        mianliao: "棉的",
+                        price: 900,
+                    }, {
+                        color: "蓝色",
+                        type: "M",
+                        mianliao: "棉的",
+                        price: 1000,
+                    }, {
+                        color: "蓝色",
+                        type: "S",
+                        mianliao: "涤纶",
+                        price: 1100,
+                    }, {
+                        color: "蓝色",
+                        type: "M",
+                        mianliao: "涤纶",
+                        price: 1200,
+                    }, ]
+                },
+                // 存储选中的条件
+                condition: {},
+                // 存储json2的属性名(key)
+                types: [],
+            }
+        },
+        methods: {
+            changeData(type, data) {
+                this.condition[type] = data
+            },
+            clear() {
+                this.condition = {}
+                this.type = []
+                this.initData()
+            },
+            // 封装函数--比较选中的数组值和数据中的值
+            compareObj(myObj, dataObj) {
+                for (let key in myObj) {
+                    if (dataObj[key] === myObj[key]) {
+                        continue
+                    } else {
+                        return false
+                    }
+                }
+                return true
+            },
+            // 封装函数--初始化数据
+            initData() {
+                this.types = Object.keys(this.mockData.json2[0]) // 将json2的属性名添加到数组中——> [color、type、miaoliao、price]
+                for (let i = 0; i < this.mockData.json1.length; i++) {
+                    // if (!this.mockData.json1[i]) return
+                    let propName = this.types[i] // 取出数组的元素
+                    this.$set(this.condition, propName, this.mockData.json1[i][0]) // condition:{color:"红色",type:"S",miaoliao:"棉的"}
+                }
+            }
+
+        },
+        computed: {
+            showInfo() {
+                return this.mockData.json2.filter(item => {
+                    return this.compareObj(this.condition, item)
+                })
+            }
+        },
+        created() {
+            this.initData()
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,128 @@
+@import 'base';
+
+.wrapper{
+    width: 680px;
+    margin: 0 auto;
+}
+body{
+    background-color: rgb(235, 235, 235);
+}
+header{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(77, 77, 77);
+    .header_main{
+        display: flex;
+        justify-content: space-between;
+        line-height: 50px;
+        h1{
+            color: white;
+        }
+        .right{
+            input{
+                width: 350px;
+                height: 30px;
+                border-radius: 10px;
+                vertical-align: middle;
+                text-indent: 1em;
+                &::placeholder{
+                    text-indent: 1em;
+                }
+                &:focus{
+                    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.24), 0 1px 6px rgba(0, 0, 0, 0.45) inset;
+                }
+            }
+        }
+    }
+}
+
+.body{
+    .task{
+        margin-top: 20px;
+        .top{
+            display: flex;
+            justify-content: space-between;
+            h2{
+                font-size: 20px;
+                color: black;
+            }
+            i{
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                border: 1px solid grey;
+                background-color: rgb(255, 255, 255);
+                border-radius: 50%;
+                text-align: center;
+                line-height: 15px;
+                color: black;
+            }
+        }
+        .main{
+            li{
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 10px;
+                height: 40px;
+                border-left: 5px solid rgb(81, 110, 81);
+                background-color: #fff;
+                border-radius: 5px;
+                line-height: 40px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+                .checkbox{
+                    margin: 11px 10px 0 20px;
+                    width: 20px;
+                    height: 20px;
+                    vertical-align: middle;
+                }
+                label{
+                    
+                    flex: 1;
+                    vertical-align: middle;
+                    font-size: 18px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                button{
+                    position: absolute;
+                    top: 8px;
+                    right: 55px;
+                    width: 30px;
+                    height: 26px;
+                    background-color: rgb(255, 255, 255);
+                    color: #666;
+                    &:hover {
+                        color: #c81623;
+                      }
+                }
+                .text{
+                    display: none;
+                    margin-top: 5px;
+                    width: 300px;
+                    height: 30px;
+                    border: 1px solid rgb(226, 221, 221);
+                    border-radius: 3px;
+                    text-indent: 0.5em;
+                }
+                a{
+                    position: absolute;
+                    top: 8px;
+                    right: 0;
+                    width: 25px;
+                    height: 26px;
+                    text-align: center;
+                    line-height: 26px;
+                    background-color: rgb(255, 255, 255);
+                    margin: 0 15px 0 ;
+                }
+            }
+        }
+    }
+}
+.opcity{
+    opacity: 0.6;
+}
+
+

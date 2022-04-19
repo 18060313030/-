@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        li{
+            width: 300px;
+            height: 200px;
+            list-style: none;
+        }
+        a{
+            position: relative;
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+        }
+        img{
+            width: 100%;
+        }
+        a::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* margin-top: -45px;
+            margin-left: -33px; */
+            
+            width: 58px;
+            height: 58px;
+            background-image: url("./images/play.png");
+            transition: all 0.5s;
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(5);
+        }
+        li:hover a::after{
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <a href="">
+                    <img src="./images/party.jpeg" alt="">
+                    <p></p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        span {
+            position: absolute;
+            display: block;
+            left: 10px;
+            top: 200px;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+</body>
+<script>
+    let div = document.querySelector("div")
+
+    function move(obj, distance) {
+        let timer = setInterval(function() {
+            if (obj.offsetLeft > distance) {
+                clearInterval(timer)
+            } else {
+                obj.style.left = obj.offsetLeft + 1 + "px"
+            }
+        }, 30)
+    }
+    move(div, 400)
+</script>
+
+</html>

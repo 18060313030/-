@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="external nofollow" target="_blank">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" rel="external nofollow"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js" rel="external nofollow"></script>
+</head>
+
+<body>
+
+    <button type="button" class="btn btn-primary">button</button>
+
+</body>
+<script>
+    let btn = document.querySelector("button")
+    btn.addEventListener("click", function() {
+        let p = new Promise((resolve, reject) => {
+            let xhr = new XMLHttpRequest()
+            xhr.open("GET", "http://www.liulongbin.top:3006/api/getbooks")
+            xhr.send()
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        resolve(xhr.response)
+                    } else {
+                        reject(xhr.status)
+                    }
+                }
+            }
+        })
+        p.then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        })
+    })
+
+    // 封装ajax请求
+    function ajaxPro(url) {
+        return new Promise((resolve, reject) => {
+            let xhr = new XMLHttpRequest()
+            xhr.open("GET", url)
+            xhr.send()
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        resolve(xhr.response)
+                    } else {
+                        reject(xhr.status)
+                    }
+                }
+            }
+        })
+    }
+    ajaxPro("http://www.liulongbin.top:3006/api/getbooks")
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+</script>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+        
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+        
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+        
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+        
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+        
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        // 获取元素
+        let slider = document.querySelector(".slider-bar")
+        let banner = document.querySelector(".banner")
+        let goBack = document.querySelector(".goBack")
+        let sliderTop = slider.offsetTop // 获取侧边栏到顶部的距离
+        let bannerTop = banner.offsetTop // 获取banner头部到页面顶部的距离
+        let sliderFix = sliderTop - bannerTop // 获取侧边栏保持距离顶部大小不变的距离
+            // 页面滚动
+        document.addEventListener("scroll", function() {
+            console.log(window.pageYOffset);
+            if (window.pageYOffset > 160) {
+                slider.style.position = "fixed"
+                slider.style.top = sliderFix + "px"
+            } else {
+                slider.style.position = "absolute"
+                slider.style.top = "300px"
+            }
+            // 当页面下拉值main区域时，侧边栏添加回到顶部的按钮
+            if (window.pageYOffset > 430) {
+                goBack.style.display = "block"
+            } else {
+                goBack.style.display = "none"
+            }
+        })
+        goBack.addEventListener("click", function() {
+            // 返回页面顶部，是滚动整个窗口，所以是window，顶部是0，0
+            move(window, 0)
+        })
+
+        // 动画函数
+        function move(obj, target, callback) {
+            // 优化点：如果不设置这个，那么给元素疯狂点击按钮时会不断绑定触发多个定时器，所以要先清空
+            clearInterval(obj.timer)
+                // 优化点：定时器名字不能写死
+            obj.timer = setInterval(function() {
+                // 使用缓动动画效果 公式：(目标值距离-当前值距离)/10 10可以改成其他的
+                let step = (target - obj.pageYOffset) / 10
+                    // 因为公式会取到小数点，所以最终位移结果不准确需要进行向上取整(步长为正值)或向下取整(步长为负值)
+                step = step > 0 ? Math.ceil(step) : Math.floor(step)
+                if (obj.pageYOffset === target) {
+                    clearInterval(obj.timer)
+
+                    // 动画执行完毕，调用如果有回调函数则调用它
+                    //   if (callback) {
+                    //       callback()
+                    //   }
+
+                    callback && callback()
+                }
+                // obj.style.left = obj.pageYOffset + step + "px"
+                window.scroll(0, obj.pageYOffset + step)
+
+            }, 15)
+        }
+    </script>
+</body>
+
+</html>

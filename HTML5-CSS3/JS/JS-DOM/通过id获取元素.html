@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">123</div>
+    <script>
+        // 通过id获取指定元素，因为id是唯一的，所以获取的元素不会像标签选择器一样，以伪元素的形式存放
+        let el = document.getElementById("box")
+        console.log(el);
+        console.log(typeof el);
+        console.dir(el);
+    </script>
+</body>
+
+</html>

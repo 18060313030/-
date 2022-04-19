@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <script>
+        // 获取指定ul下的li
+        // 1、取得ul标签，因为是返回的值是伪数组，所以需要以获取数组的元素的形式调用ul标签
+        // 2、获取ul标签下的li标签
+        let ul = document.getElementsByTagName("ul")
+        let lis = ul[0].getElementsByTagName("li")
+        console.log(lis);
+    </script>
+</body>
+
+</html>

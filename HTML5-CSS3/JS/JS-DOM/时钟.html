@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: o;
+            padding: 0;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+        }
+        
+        ul {
+            margin: 100px auto;
+            width: 150px;
+            height: 40px;
+        }
+        
+        li {
+            float: left;
+            margin-right: 10px;
+            width: 40px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+<script>
+    window.onload = function() {
+        let ul = document.querySelector("ul")
+        getDate() //防止第一次刷新有空白，先调用一次该函数
+
+        function getDate() {
+            let date = new Date()
+            let hour = date.getHours()
+            hour = hour <= 9 ? "0" + hour : hour
+            let mm = date.getMinutes()
+            mm = mm <= 9 ? "0" + mm : mm
+            let ss = date.getSeconds()
+            ss = ss <= 9 ? "0" + ss : ss
+            ul.children[0].innerHTML = hour
+            ul.children[1].innerHTML = mm
+            ul.children[2].innerHTML = ss
+        }
+        setInterval(getDate, 1000)
+    }
+</script>
+
+</html>

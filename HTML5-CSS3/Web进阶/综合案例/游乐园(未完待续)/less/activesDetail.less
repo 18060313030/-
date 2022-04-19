@@ -1,0 +1,229 @@
+@import "./base.less";
+@import "./normalize.less";
+
+@rootSize: 37.5rem;
+
+body{
+  background-color: #F0F0F0;
+  padding-bottom: (60 / @rootSize);
+}
+
+// 头部
+.top{
+  margin-bottom: (10 / @rootSize);
+  .pic{
+    position: relative;
+    width: 100%;
+    img{
+      width: 100%;
+    }
+    i{
+      position: absolute;
+      top: (15 / @rootSize);
+      right: (20 / @rootSize);
+      width: (24 / @rootSize);
+      height: (24 / @rootSize);
+      background-image: url("../uploads/heart.png");
+      background-size: contain;
+      border-radius: 50%;
+    }
+    .collectNum{
+      position: absolute;
+      bottom: (15 / @rootSize);
+      left: (15 / @rootSize);
+      width: (90 / @rootSize);
+      height: (20 / @rootSize);
+      i{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: (20 / @rootSize);
+        height: (20 / @rootSize);
+        background-image: url("../uploads/heart.png");
+        background-size: contain;
+        border-radius: 50%;
+      }
+      span{
+        position: absolute;
+        top: 0;
+        left: (20 / @rootSize);
+        margin-left: (4 / @rootSize);
+        line-height: (20 / @rootSize);
+        font-size: (10 / @rootSize);
+        color: #fff;
+      }
+    }
+  }
+  .txt{
+    padding: (12 / @rootSize) (15 / @rootSize);
+    background-color: #fff;
+    .top{
+      width: (345 / @rootSize);
+      font-size: (15 / @rootSize);
+      color: #3C3C3C ;
+    }
+    .bottom{
+      display: flex;
+      justify-content: space-between;
+      margin-top: (15 / @rootSize);
+      .left{
+        display: flex;
+        div{
+          margin-right: (15 / @rootSize);
+          font-size: (11 / @rootSize);
+          color: #B4B4B4;
+          .iconfont{
+            font-size: (11 / @rootSize);
+          }
+        }
+      }
+      .right{
+        font-size: (16 / @rootSize);
+        color: #FE6249;
+      }
+    }
+  }
+}
+
+// 活动信息
+.info{
+  margin-bottom: (10 / @rootSize);
+  padding: (2 / @rootSize) 0 (18 / @rootSize) (15 / @rootSize);
+  background-color: #fff;
+  li{
+    border-bottom: 1px solid #F0F0F0;
+    padding: (16 / @rootSize) 0 ;
+    span{
+      font-size: (13 / @rootSize);
+      i{
+        margin-left: (24 / @rootSize);
+      }
+    }
+    &:last-child{
+      padding-bottom: 0;
+      border-bottom: 0;
+
+    }
+  }
+  
+}
+
+// 活动详情
+.detail{
+  margin-bottom: (10 / @rootSize);
+  background-color: #fff;
+  .title{
+    padding: (20 / @rootSize) 0 (15 / @rootSize) (15 / @rootSize);
+    font-size: (12 / @rootSize);
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .introduce{
+    position: relative;
+    padding: 0 (15 / @rootSize);
+    h3{
+      margin: (10 / @rootSize) 0;
+      font-weight: 400;
+      font-size: (12 / @rootSize);
+    }
+    p{
+      font-size: (12 / @rootSize);
+      color: #A0A0A0;
+      line-height: (18 / @rootSize);
+    }
+    img{
+      margin: (12 / @rootSize) 0 ;
+    }
+    .mask{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: (60 / @rootSize);
+      background-image: linear-gradient(
+        transparent,
+        rgba(255,255,255,.7)
+      );
+      a{
+        position: absolute;
+        bottom: (10 / @rootSize);
+        left: (140 / @rootSize);
+        font-size: 14px;
+        font-weight: 500;
+        color: #45B8FF;
+      }
+    }
+  }
+}
+
+// 参加须知
+.notice{
+  margin-bottom: (10 / @rootSize);
+  background-color: #fff;
+  .title{
+    padding: (20 / @rootSize) 0 (14 / @rootSize) (15 / @rootSize);
+    font-size: (14 / @rootSize);
+    border: 1px solid #f0f0f0;
+  }
+  .content{
+    padding: (10 / @rootSize) 0 (14 / @rootSize) (19 / @rootSize);
+    .top{
+      li{
+        position: relative;
+        color: #A0A0A0;
+        font-size: (12 / @rootSize);
+        line-height: (25 / @rootSize);
+        i{
+          position: absolute;
+          top: (8 / @rootSize);
+          left: 0;
+          width: (8 / @rootSize);
+          height: (8 / @rootSize);
+          background-color: #A0A0A0;
+          border-radius: 50%;
+        }
+        span{
+          margin-left: (12 / @rootSize);
+        }
+      }
+    }
+    .bottom{
+      position: relative;
+      margin-left: (-4 / @rootSize);
+      width: (344 / @rootSize);
+      height: (38 / @rootSize);
+      a{
+        display: block;
+        border: 1px solid #D8D8D8;
+        font-size: (14 / @rootSize);
+        text-align: center;
+        color: #969696;
+        line-height: (38 / @rootSize);
+      }
+      .iconfont{
+        position: absolute;
+        top: (9 / @rootSize);
+        left: (122 / @rootSize);
+        font-size: (18 / @rootSize);
+        color: #969696;
+      }
+    }
+  }
+}
+
+// 底部
+footer{
+  position: fixed;
+  left: 0;
+  bottom: (-5 / @rootSize);
+  width: 100%;
+  a{
+    display: block;
+
+    height: (50 / @rootSize);
+    background-color: #FECB49;
+    text-align: center;
+    color: #fff;
+    line-height: (50 / @rootSize);
+    font-size: (20 / @rootSize);
+  }
+}

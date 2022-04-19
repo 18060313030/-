@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+</body>
+<script>
+    // 使用innerHtml 字符串拼接方式
+    // let div = document.querySelector("div")
+    // let time1 = +new Date()
+    // for (let index = 0; index < 101; index++) {
+    //     div.innerHTML += "<a hres='javascript:;'>123</a>"
+    // }
+    // let time2 = +new Date()
+    // console.log(time2 - time1);
+    // 使用createElement
+    let div = document.querySelector("div")
+    let time1 = +new Date()
+    for (let i = 0; i < 101; i++) {
+        let a = document.createElement("a")
+        div.appendChild(a)
+    }
+    let time2 = +new Date()
+    console.log(time2 - time1);
+</script>
+
+</html>

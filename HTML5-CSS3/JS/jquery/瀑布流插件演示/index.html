@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" href="src/stylesheets/chromagallery.css">
+
+
+</head>
+
+<body>
+    <div class="chroma-gallery mygallery">
+        <img src="images/thumbs/1.jpg" alt="Pic 1" data-largesrc="images/1.jpg">
+        <img src="images/thumbs/2.jpg" alt="Pic 2" data-largesrc="images/2.jpg">
+        <img src="images/thumbs/3.jpg" alt="Pic 3" data-largesrc="images/3.jpg">
+        <img src="images/thumbs/4.jpg" alt="Pic 4" data-largesrc="images/4.jpg">
+        <img src="images/thumbs/5.jpg" alt="Pic 5" data-largesrc="images/5.jpg">
+        <img src="images/thumbs/6.jpg" alt="Pic 6" data-largesrc="images/6.jpg">
+        <img src="images/thumbs/7.jpg" alt="Pic 7" data-largesrc="images/7.jpg">
+        <img src="images/thumbs/8.jpg" alt="Pic 8" data-largesrc="images/8.jpg">
+        <img src="images/thumbs/9.jpg" alt="Pic 9" data-largesrc="images/9.jpg">
+        <img src="images/thumbs/10.jpg" alt="Pic 10" data-largesrc="images/10.jpg">
+    </div>
+</body>
+<script src="./js/jquery-1.11.0.min.js"></script>
+<script src="dist/scripts/modernizr-chrg.min.js"></script>
+<script src="dist/scripts/imagesloaded.min.js"></script>
+<script src="dist/scripts/masonry.min.js"></script>
+<script src="dist/scripts/chromagallery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".mygallery").chromaGallery({
+            color: '#000',
+            gridMargin: 15,
+            maxColumns: 5,
+            dof: true,
+            screenOpacity: 0.8
+        });
+    });
+</script>
+
+</html>

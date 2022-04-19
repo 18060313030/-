@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 1000px;
+            margin: 50px auto;
+        }
+        li{
+            position: relative;
+            float: left; 
+            margin-right: 50px;
+            width: 300px;
+            height: 212px;
+            list-style: none;
+            overflow: hidden;
+        }
+        li:nth-child(3){
+            margin-right: 0;
+        }
+        .wrapper img{
+            width: 100%;
+            height: 100%;
+            transition: all 0.5s;
+        }
+        .wrapper .detail{
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            width: 240px;
+            transform: translateY(60px);
+            color: white;
+            transition: all 0.5s;
+        }
+        .wrapper .mask{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateY(60px);
+            background-image: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.6)
+            );
+            transition: all 0.5s;
+            opacity: 0;
+        }
+        .wrapper .detail h4{
+            font-size: 14px;
+        }
+        .wrapper .detail h5{
+            font-size: 16px;
+        }
+        .wrapper .detail p{
+            margin-top: 40px;
+        }
+        .wrapper li:hover .detail{
+            transform: translateY(10px);
+        }
+        .wrapper li:hover .mask{
+            opacity: 1;
+            transform: translateY(10px);
+        }
+        .wrapper li:hover img{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul>
+            <li>
+                <a href="">
+                    <img src="./images/product.jpeg" alt="">
+                    <div class="mask"></div>
+                    <div class="detail">
+                        <h4>产品</h4>
+                        <h5>OceanStor Pacific 海量存储斩获2021 Interop金奖</h5>
+                        <p>
+                            <span>了解更多</span>
+                            <i class="iconfont icon-arrow-right"></i>
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./images/huawei1.jpeg" alt="">
+                    <div class="mask"></div>
+                    <div class="detail">
+                        <h4>产品</h4>
+                        <h5>OceanStor Pacific 海量存储斩获2021 Interop金奖</h5>
+                        <p>
+                            <span>了解更多</span>
+                            <i class="iconfont icon-arrow-right"></i>
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./images/huawei2.jpeg" alt="">
+                    <div class="mask"></div>
+                    <div class="detail">
+                        <h4>产品</h4>
+                        <h5>OceanStor Pacific 海量存储斩获2021 Interop金奖</h5>
+                        <p>
+                            <span>了解更多</span>
+                            <i class="iconfont icon-arrow-right"></i>
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

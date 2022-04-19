@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1、定义UI结构 -->
+    <form action="">
+        <input type="file" id="myFile">
+        <button id="btn">上传</button>
+        <br/>
+        <img src="" alt="">
+    </form>
+</body>
+<script>
+    // 2、点击按钮时判断是否有添加上传的文件
+    let btn = document.querySelector("#btn")
+    btn.addEventListener("click", function(e) {
+        e.preventDefault()
+        let files = document.querySelector("#myFile").files
+        if (files.length <= 0) {
+            return alert("请添加文件")
+        }
+        console.log(files);
+        let xhr = new XMLHttpRequest() // 创建对象
+        let fd = new FormData() // 创建对象
+        fd.append("avatar", files[0]) // 添加文件到表单对象
+        xhr.open("POST", "http://www.liulongbin.top:3006/api/upload/avatar")
+        xhr.send(fd)
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                let data = JSON.parse(xhr.responseText)
+                console.log(data);
+                if (data.status === 200) {
+                    document.querySelector("img").src = "http://www.liulongbin.top:3006" + data.url
+                } else {
+                    alert(data.message)
+                }
+            }
+        }
+    })
+</script>
+
+</html>

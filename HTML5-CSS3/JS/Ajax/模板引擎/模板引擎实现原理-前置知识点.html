@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let str = "我的名字：{{ name}}，我的年龄：{{ age }}"
+
+    // 1.1、第一次匹配
+    let pattern = /{{\s*([a-zA-Z]+)\s*}}/
+    let result = pattern.exec(str)
+    let newStr = str.replace(result[0], result[1])
+    console.log(newStr)
+
+    // 1.2、第二次匹配
+    let result2 = pattern.exec(newStr)
+    let newStr2 = newStr.replace(result2[0], result2[1])
+    console.log(newStr2);
+
+    console.log("===============");
+
+    // 2、循环实现匹配
+    let template = "我叫{{ name }},我今年{{  age }}岁了"
+    let ptn = /{{\s*([a-zA-Z]+)\s*}}/
+
+    let ptnObj = null
+    while (ptnObj = ptn.exec(template)) {
+        template = template.replace(ptnObj[0], ptnObj[1])
+    }
+    console.log(template);
+
+    console.log("===============");
+
+    // 3、实现数据匹配
+    let data = {
+        name: "Zs",
+        age: 12
+    }
+    let template2 = "我叫{{ name }},我今年{{  age }}岁了"
+    let ptn2 = /{{\s*([a-zA-Z]+)\s*}}/
+
+    let ptnObj2 = null
+    while (ptnObj2 = ptn.exec(template2)) {
+        template2 = template2.replace(ptnObj2[0], data[ptnObj2[1]])
+    }
+    console.log(template2);
+</script>
+
+</html>

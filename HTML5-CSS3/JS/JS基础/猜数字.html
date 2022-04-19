@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function randomNum(min, max) {
+            var rand = Math.floor(Math.random() * (max - min + 1)) + min;
+            return rand
+        }
+        let random = randomNum(1, 10)
+        let num = 2;
+        while (num > 0) {
+            let userNum = parseInt(prompt("请输入一个整数:"))
+            if (userNum < random) {
+                alert("数字小了")
+                num--
+                num > 0 ? alert("你还有" + num + "次机会") : alert("机会已用完，游戏结束")
+            } else if (userNum > random) {
+                alert("数字大了")
+                num--
+                num > 0 ? alert("你还有" + num + "次机会") : alert("机会已用完，游戏结束")
+            } else {
+                alert("你猜对了，数字是" + random)
+                break
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

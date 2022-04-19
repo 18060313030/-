@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1、创建xhr对象
+    let xhr = new XMLHttpRequest()
+
+    // 2、指定请求方式和url地址
+    xhr.open("POST", "http://www.liulongbin.top:3006/api/addbook")
+
+    // 3、声明content-type
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+
+    // 4、发送请求，同时将数据已查询字符串的形式发送给服务器
+    xhr.send("bookname=上上签&author=薛之谦&publisher=asdad")
+
+    // 5、监听onreadystatechange事件
+    xhr.onreadystatechange = function() {
+        console.log(xhr.responseText);
+    }
+</script>
+
+</html>

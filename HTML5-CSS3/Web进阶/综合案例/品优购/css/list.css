@@ -1,0 +1,70 @@
+/* 秒杀图片 */
+
+.seckill {
+    position: absolute;
+    top: 43px;
+    left: 187px;
+    padding-top: 4px;
+    padding-left: 13px;
+    border-left: 1px solid #b1191a;
+}
+
+
+/* nav导航条 */
+
+.nav .seckill_list li {
+    float: left;
+}
+
+.nav .seckill_list li a {
+    display: block;
+    padding: 0 28px;
+    height: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+.nav .seckill_con ul {
+    margin: 34px;
+}
+
+.nav .seckill_con li {
+    float: left;
+    padding: 0 22px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.nav .seckill_con li:last-child a::after {
+    content: '\e91e';
+    font-family: 'icomoon';
+    font-size: 14px;
+}
+
+
+/* 列表框 */
+
+.list_item {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.list_item .item li {
+    float: left;
+    margin-right: 10px;
+    border: 1px solid transparent;
+}
+
+.list_item .item li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.list_item .item li img {
+    width: 290px;
+    height: 460px;
+}
+
+.list_item .item li:hover {
+    border: 1px solid #e12228;
+}

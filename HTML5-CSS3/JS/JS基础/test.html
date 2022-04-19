@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let str = "0123456782"
+        let obj = {}
+        for (let i = 0; i < str.length; i++) {
+            let temp = str.charAt(i)
+            if (obj[temp]) {
+                obj[temp]++
+            } else {
+                obj[temp] = 1
+            }
+        }
+        let max = 0
+        let value
+        for (let k in obj) {
+            if (max < obj[k]) {
+                max = obj[k]
+                value = k
+            }
+        }
+        console.log(max + "," + value);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

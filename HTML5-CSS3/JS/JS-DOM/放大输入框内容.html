@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            margin: 100px auto;
+            width: 200px;
+            height: 20px;
+        }
+        
+        .box input {
+            width: 200px;
+            height: 20px;
+            outline: none;
+            font-size: 12px;
+        }
+        
+        .box .copy {
+            display: none;
+            position: absolute;
+            top: -40px;
+            left: 4px;
+            width: 170px;
+            height: 30px;
+            border-radius: 10px;
+            text-indent: 0.5em;
+            line-height: 30px;
+            background-color: pink;
+        }
+        
+        .box .copy::after {
+            content: "";
+            position: absolute;
+            top: 29px;
+            left: 19px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid red;
+            border: 8px solid #000;
+            border-style: solid dashed dashed;
+            border-color: pink transparent transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="copy"></div>
+        <input type="text">
+    </div>
+</body>
+<script>
+    let input = document.querySelector("input")
+    let copy = document.querySelector(".copy")
+        // 输入文字，放大内容框显示
+    input.addEventListener("keyup", function(e) {
+            if (input.value == "") {
+                copy.style.display = "none"
+            } else {
+                copy.style.display = "block"
+                copy.innerHTML = input.value
+            }
+        })
+        // 失去焦点隐藏放大内容框
+    input.addEventListener("blur", function() {
+            copy.style.display = "none"
+        })
+        // 获取焦点显示放大内容框
+    input.addEventListener("focus", function() {
+        if (input.value !== "") {
+            copy.style.display = "block"
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = "sdfuopsdifpodao"
+            // 1、计算指定元素第一次出现的位置
+        let index = arr.indexOf("o")
+        let num = 0 // 总次数
+            // 2、使用while循环，如果索引值不为-1说明有该元素存在，执行循环体
+        while (index !== -1) {
+            console.log(index)
+                // 2.1 先将次数加1，因为循环外边已经先找过一次了
+            num++
+            // 接着找下一个位置是否有该元素(搜索位置为当前元素位置+1)
+            index = arr.indexOf("o", index + 1)
+        }
+        console.log(num)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

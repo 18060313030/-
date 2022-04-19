@@ -1,0 +1,1 @@
+let tuple: [number, number] = [1,"2"]

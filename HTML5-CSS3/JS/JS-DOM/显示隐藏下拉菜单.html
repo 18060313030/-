@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .box {
+        margin: 100px auto;
+        width: 400px;
+        background-color: pink;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    li {
+        float: left;
+        width: 80px;
+        height: 40px;
+    }
+    
+    li a {
+        padding: 0 20px;
+        border-right: 1px solid #ccc;
+        text-decoration: none;
+        color: #999;
+        line-height: 40px;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    li:nth-child(3) {
+        position: relative;
+    }
+    
+    li:nth-child(3) .select {
+        position: absolute;
+        display: none;
+        top: 32px;
+        left: 5px;
+        width: 60px;
+        height: 70px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+    }
+    
+    li:nth-child(3) .select p {
+        padding-bottom: 3px;
+        border-bottom: 1px solid #ccc;
+        font-size: 12px;
+        text-align: center;
+        line-height: 20px;
+        color: #999;
+    }
+    
+    li:nth-child(3) .select p:last-child {
+        border-bottom: 0;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">首页</a></li>
+            <li class="li3">
+                <a href="">首页</a>
+                <div class="select">
+                    <p>xxxx</p>
+                    <p>xxxx</p>
+                    <p>xxxx</p>
+                </div>
+            </li>
+            <li><a href="">首页</a></li>
+            <li><a href="">首页</a></li>
+        </ul>
+    </div>
+
+</body>
+<script>
+    let li = document.getElementsByClassName("li3")
+    let div = document.getElementsByClassName("select")
+    li[0].onmouseover = function() {
+        div[0].style.display = "block"
+    }
+    li[0].onmouseout = function() {
+        div[0].style.display = "none"
+    }
+</script>
+
+</html>

@@ -1,0 +1,179 @@
+/* 把我们所有标签的内外边距清零 */
+* {
+  margin: 0;
+  padding: 0;
+  /* css3盒子模型 */
+  box-sizing: border-box;
+}
+/* em 和 i 斜体的文字不倾斜 */
+em,
+i {
+  font-style: normal;
+}
+/* 去掉li 的小圆点 */
+li {
+  list-style: none;
+}
+img {
+  /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+  border: 0;
+  /* 取消图片底侧有空白缝隙的问题 */
+  vertical-align: middle;
+}
+button {
+  /* 当我们鼠标经过button 按钮的时候，鼠标变成小手 */
+  cursor: pointer;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  color: #c81623;
+}
+button,
+input {
+  /* "\5B8B\4F53" 就是宋体的意思 这样浏览器兼容性比较好 */
+  font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  /* 默认有灰色边框我们需要手动去掉 */
+  border: 0;
+  outline: none;
+}
+body {
+  /* CSS3 抗锯齿形 让文字显示的更加清晰 */
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+  color: #666;
+}
+.hide,
+.none {
+  display: none;
+}
+/* 清除浮动 */
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
+.wrapper {
+  width: 680px;
+  margin: 0 auto;
+}
+body {
+  background-color: #ebebeb;
+}
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #4d4d4d;
+}
+header .header_main {
+  display: flex;
+  justify-content: space-between;
+  line-height: 50px;
+}
+header .header_main h1 {
+  color: white;
+}
+header .header_main .right input {
+  width: 350px;
+  height: 30px;
+  border-radius: 10px;
+  vertical-align: middle;
+  text-indent: 1em;
+}
+header .header_main .right input::placeholder {
+  text-indent: 1em;
+}
+header .header_main .right input:focus {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.24), 0 1px 6px rgba(0, 0, 0, 0.45) inset;
+}
+.body .task {
+  margin-top: 20px;
+}
+.body .task .top {
+  display: flex;
+  justify-content: space-between;
+}
+.body .task .top h2 {
+  font-size: 20px;
+  color: black;
+}
+.body .task .top i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid grey;
+  background-color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15px;
+  color: black;
+}
+.body .task .main li {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  height: 40px;
+  border-left: 5px solid #516e51;
+  background-color: #fff;
+  border-radius: 5px;
+  line-height: 40px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+.body .task .main li .checkbox {
+  margin: 11px 10px 0 20px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.body .task .main li label {
+  flex: 1;
+  vertical-align: middle;
+  font-size: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.body .task .main li button {
+  position: absolute;
+  top: 8px;
+  right: 55px;
+  width: 30px;
+  height: 26px;
+  background-color: #ffffff;
+  color: #666;
+}
+.body .task .main li button:hover {
+  color: #c81623;
+}
+.body .task .main li .text {
+  display: none;
+  margin-top: 5px;
+  width: 300px;
+  height: 30px;
+  border: 1px solid #e2dddd;
+  border-radius: 3px;
+  text-indent: 0.5em;
+}
+.body .task .main li a {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  width: 25px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  background-color: #ffffff;
+  margin: 0 15px 0 ;
+}
+.opcity {
+  opacity: 0.6;
+}
