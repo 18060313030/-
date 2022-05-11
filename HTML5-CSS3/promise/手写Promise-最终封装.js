@@ -146,8 +146,32 @@ class Promise {
             reject(err)
         })
     }
-
-    // 添加all方法
+	
+	// 添加all方法(正确写法)
+	// 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
+	// 如果所有Promise都成功，则返回成功结果数组
+	// 如果有一个Promise失败，则返回这个失败结果
+	static all(promiseArr) {
+        const result = []
+        let count = 0
+        return new Promise((resolve, reject) => {
+            const addData = (index, value) => {
+                result[index] = value
+                count++
+                if (count === promiseArr.length) resolve(result)
+            }
+            promiseArr.forEach((promise, index) => {
+                if (promise instanceof Promise) {
+                    promise.then(res => {
+                        addData(index, res)
+                    }, err => reject(err))
+                } else {
+                    addData(index, promise)
+                }
+            })
+        })
+    }
+    // 添加all方法(漏了一个非promise对象的条件判断)
     static all(promiseArr) {
         return new Promise((resolve, reject) => {
             // 数组中的Promise对象都成功才改变Promise状态为成功
@@ -183,6 +207,37 @@ class Promise {
                     reject(err)
                 })
             }
+        })
+    }
+	// 接收一个Promise数组，数组中如有非Promise项，则此项当做成功
+	// 把每一个Promise的结果，集合成数组，返回
+	static allSettle(promiseArr) {
+        return new Promise((resolve, reject) => {
+            let count = 0
+            let arr = []
+
+            function setData(state, value, index) {
+                count++
+                arr[index] = {
+                    state,
+                    value
+                }
+                if (count === promiseArr.length) {
+                    resolve(arr)
+                }
+            }
+
+            promiseArr.forEach((item, index) => {
+                if (item instanceof Promise) {
+                    item.then(value => {
+                        setData("fulfilled", value, index)
+                    }, reason => {
+                        setData("rejected", reason, index)
+                    })
+                } else {
+                    setData("fulfilled", item, index)
+                }
+            })
         })
     }
 }
