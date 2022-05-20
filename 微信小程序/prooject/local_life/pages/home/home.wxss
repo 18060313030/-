@@ -1,0 +1,47 @@
+/* pages/home/home.wxss */
+/* 轮播图 */
+swiper {
+  height: 350rpx;
+}
+swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+/* 九宫格 */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.grid_item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 33.33%;
+  height: 170rpx;
+  border-bottom: 1px solid #ededed;
+  border-right: 1px solid #ededed;
+}
+
+.grid_item image{
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.grid_item text{
+  font-size: 14px;
+}
+
+/* 两张图片 */
+.imgGroup{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+.imgGroup image{
+  width: 350rpx;
+  height: 150rpx;
+}

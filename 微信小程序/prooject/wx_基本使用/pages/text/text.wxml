@@ -1,0 +1,10 @@
+<!--pages/text/text.wxml-->
+<view>
+  长按选择文本
+  <text user-select>13105020132</text>
+</view>
+
+<view>
+  富文本
+  <rich-text nodes="<h1>html标签h1</h1>"></rich-text>
+</view>
