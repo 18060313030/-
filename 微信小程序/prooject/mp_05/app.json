@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/message/message",
+    "pages/contact/contact"
+  ],
+  "preloadRule": {
+    "pages/contact/contact": {
+      "network": "all",
+      "packages": ["packageA"] 
+    }
+  },
+  "subpackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/yellow/yellow",
+        "pages/red/red"
+      ]
+    },
+    {
+      "root": "packageB",
+      "pages":[
+        "pages/one/one",
+        "pages/two/two"
+      ]
+    },
+    {
+      "root": "packageC",
+      "pages": [
+        "pages/big/big",
+        "pages/small/small"
+      ],
+      "independent": true
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#13A7A0",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/tabs/home.png",
+        "selectedIconPath": "/images/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "/images/tabs/message.png",
+        "selectedIconPath": "/images/tabs/message-active.png"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "text": "联系我们",
+        "iconPath": "/images/tabs/contact.png",
+        "selectedIconPath": "/images/tabs/contact-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "test1": "/components/test1/test1",
+    "van-button": "@vant/weapp/button/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}
