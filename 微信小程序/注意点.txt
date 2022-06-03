@@ -1,0 +1,22 @@
+tabBar节点中的list[]数组里面的最后一个元素 不能有逗号  否则会报错
+
+页面头部没有显示标题，请查收，局部页面的 .json文件是否有设置了navigationBarTitleText: "" 将全局的覆盖了
+
+取消顶部的navgator    在局部的.json文件中添加"navigationStyle": "custom"
+
+在vue中，<view :style="a + 'b' "> a是定义好的变量， b是一个常量   常量一定一定一定要用引号括起来
+
+吸顶效果：
+  position: sticky;
+  top: 0;
+  z-index: 999
+
+
+
+img{display:block;}与Img图片默认的3px空白缝隙解决方法以及display相关问题
+1、为什么经常见img{display:block;}这种设置？
+	img{display:block;} 表示将img标签，即图片标签由行内元素变成一个块级元素。
+	一般在制作轮播网页或使用到img图片时，我们都会对图片设置img{display:bolck}。因为img图片下方会有一个3px的白色空隙产生，这样设置之后可以把img变为块级元素从而来消除这段空隙。
+2、Img图片默认的3px空白缝隙解决方法
+	变为块级元素，设置img{display:block;}
+	通过设置垂直对齐方式来消，即vertical-align:top|bottom|text-top|text-bottom
