@@ -1,0 +1,5 @@
+commonJs: module.exports = {}    
+	   let ... = require()
+
+ES6:  	export default function ..(){} 
+	 import  ... from ...

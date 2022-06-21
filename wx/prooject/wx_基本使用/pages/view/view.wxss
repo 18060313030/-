@@ -1,0 +1,12 @@
+/* pages/view/view.wxss */
+.container1 {
+  display: flex;
+  justify-content: space-around;
+}
+.container1 view {
+  width: 100px;
+  height: 100px;
+  border: 1px solid grey;
+  text-align: center;
+  line-height: 100px;
+}

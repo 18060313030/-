@@ -1,0 +1,8 @@
+所有资源文件需要在main.js【入口文件】处引入才会被打包。
+
+例如：
+import count from "./js/count"; // 被引入了
+import sum from "./js/sum"; // 被引入了
+
+console.log(count(2, 1));
+console.log(sum(1, 2, 3, 4));

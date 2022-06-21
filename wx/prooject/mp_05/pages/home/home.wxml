@@ -1,0 +1,7 @@
+<van-button type="primary" bind:tap="getInfo">发送基于Promise的get请求</van-button>
+<view>====以下是页面中调用mobx共享数据=====</view>
+<view>{{num1}} + {{num2}} = {{sum}}</view>
+<van-button type="warning" bindtap="btn" data-step="{{-1}}">num1 - 1</van-button>
+<van-button type="danger" bindtap="btn" data-step="{{1}}">num1 + 1</van-button>
+<view>=====以下是组件调用mobx共享数据=====</view>
+<test1></test1>

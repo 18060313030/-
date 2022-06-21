@@ -1,0 +1,16 @@
+<!--pages/goodsList/goodsList.wxml-->
+<view class="goodsList" wx:for="{{goodsList}}" wx:key="id">
+  <view class="goodsList_image">
+    <image src="{{item.images[0]}}"></image>
+  </view>
+  <view class="goodsList_info">
+    <text>{{item.name}}</text>
+    <text>电话：{{ m1.format(item.phone) }}</text>
+    <text>地址：{{item.address}}</text>
+    <text>营业时间：{{item.businessHours}}</text>
+  </view>
+</view>
+
+<!-- 导入wxs -->
+<wxs src="../../utils/formatPhone.wxs" module="m1"></wxs>
+

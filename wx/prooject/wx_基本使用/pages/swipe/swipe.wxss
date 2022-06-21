@@ -1,0 +1,19 @@
+/* pages/swipe/swipe.wxss */
+.container1 {
+  height: 120px;
+}
+
+.container1 swiper-item {
+  height: 100%;
+  text-align: center;
+  line-height: 120px;
+}
+swiper-item:nth-child(1) .item{
+  background-color: pink;
+}
+swiper-item:nth-child(2) .item{
+  background-color: red;
+}
+swiper-item:nth-child(3) .item{
+  background-color: green;
+}

@@ -1,0 +1,20 @@
+<!-- 轮播图 -->
+<swiper autoplay="true" 	indicator-dots indicator-active-color="white" 	circular 	interval="2000">
+  <swiper-item  wx:for="{{ swiperList }}" wx:key="goods_id">
+    <image src="{{item.image_src}}"></image>
+  </swiper-item>
+</swiper>
+
+<!-- 九宫格 -->
+<view class="grid">
+  <navigator url="/pages/goodsList/goodsList?id={{item.id}}&title={{item.name}}" class="grid_item" wx:for="{{ nineList }}" wx:key="index">
+    <image src="{{item.icon}}"></image>
+    <text>{{item.name}}</text>
+  </navigator>
+</view>
+
+<!-- 两张图片 -->
+<view class="imgGroup">
+  <image src="/images/link-01.png"></image>
+  <image src="/images/link-02.png"></image>
+</view>

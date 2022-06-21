@@ -1,0 +1,26 @@
+/* pages/goodsList/goodsList.wxss */
+.goodsList{
+  display: flex;
+  margin: 15rpx;
+  padding: 10rpx;
+  border: 1rpx solid #ddd;
+  box-shadow: 1rpx 1rpx 15rpx #ededed;
+}
+
+.goodsList_image image{
+  /* 去除图片下方的空白间隙 */
+  display: block; 
+  width: 250rpx;
+  height: 250rpx;
+}
+.goodsList_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 10rpx;
+  font-size: 24rpx;
+}
+.goodsList_info text:nth-child(1){
+  font-size: 28rpx;
+  font-weight: 700;
+}

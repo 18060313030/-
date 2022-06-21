@@ -1,0 +1,21 @@
+<!--pages/contack/contack.wxml-->
+<navigator url="/pages/message/message" open-type="switchTab">跳转到消息的tab页面</navigator>
+<navigator url="/pages/info/info" open-type="navigate">跳转到info页面</navigator>
+<button bindtap="goMessage">跳转到消息的tab页面</button>
+<button bindtap="goInfo">跳转到info页面</button>
+<navigator url="/pages/info/info?name=zs&age=12">声明式导航传参</navigator>
+<button bindtap="gotoParameter">编程式导航传参</button>
+<view>==============</view>
+<view>count:{{count}}</view>
+<button bindtap="add">+1</button>
+<view>{{ m1.toUpper(username) }}</view>
+<view>{{ m2.toLower(name)}}</view>
+<!-- 内嵌wxs -->
+<wxs module="m1">
+  module.exports.toUpper = function(str){
+    return str.toUpperCase()
+  }
+</wxs>
+
+<!-- 外联wxs
+<wxs src="../../utils/toUpper.wxs" module="m2"></wxs> -->

@@ -1,0 +1,5 @@
+根据 sitemap 的规则[0]，当前页面 [pages/tabBar/component/component] 将被索引
+
+以上是默认警告信息
+
+通过在project.config.json文件的setting:{} 中添加或修改 "checkSiteMap" : false

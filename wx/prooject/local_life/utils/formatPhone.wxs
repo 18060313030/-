@@ -1,0 +1,11 @@
+function format(phone){
+  if(phone.length !== 11) return 
+  var arr = phone.split("")
+  arr.splice(3, 0, "-")
+  arr.splice(8, 0, "-")
+  return arr.join("")
+}
+
+module.exports = {
+  format: format
+}
