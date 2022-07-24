@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重写map</title>
+</head>
+
+<body>
+    <ul></ul>
+    <div class="wrap" style="display: none">
+        [ { "id":1,"show":false, "url":"http://www.itcast.cn/subject/phoneweb/index.html", "img":"http://m.itheima.com/images/slidead/mobile/20191213180241750x410.jpg" }, { "id":2,"show":true, "url":"http://www.itcast.cn/subject/phoneweb/index.html", "img":"http://m.itheima.com/images/slidead/mobile/20191210154717750-410.jpg"
+        }, { "id":3, "show":false, "url":"http://www.itcast.cn/subject/phoneweb/index.html", "img":"http://m.itheima.com/images/slidead/mobile/20190327135101750x410-%E4%BC%A0%E6%99%BA%E9%BB%91%E9%A9%AC%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B9%BB%E7%81%AF.jpg"
+        } ]
+    </div>
+</body>
+<script src="./utils.js"></script>
+<script>
+    let oDiv = document.getElementsByClassName("wrap")[0],
+        oUl = document.getElementsByTagName("ul")[0], // ul元素节点对象
+        dataArr = JSON.parse(oDiv.innerHTML) // JSON对象
+
+    // 重写map
+    Array.prototype.myMap = function(fn) {
+        let arr = this, // 函数this指向数组
+            arrLength = arr.length, // 获取数据长度
+            _self = arguments[1] || window, // forEach(fn, 第二个参数)第二个参数可选,用于修改fn中的this指向
+            newArr = []
+
+        for (let i = 0; i < arrLength; i++) {
+            item = cloneDeep(arr[i]) // 深拷贝
+            newArr.push(fn.apply(_self, [item, i, arr]))
+        }
+        return newArr
+    }
+
+    // 使用重写的map
+    // 原生的map中，修改了数组的元素，原数组也会收到影响，自己封装的使用了深拷贝处理了这个问题
+    let newArr = dataArr.myMap(function(item, index, arr) {
+        item.url = "[链接] " + item.url
+        return item
+    })
+    console.log(newArr);
+</script>
+
+</html>

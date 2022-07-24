@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .receive {
+            margin: 100px auto;
+            width: 100px;
+            height: 40px;
+            background-color: red;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        
+        .done {
+            background-color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="receive">
+        领取奖券
+    </div>
+</body>
+<script>
+    let quan = document.getElementsByClassName("receive")[0]
+    quan.addEventListener("click", function() {
+        this.innerHTML = "已领取"
+        this.className += " done"
+        this.removeEventListener("click", arguments.callee)
+    })
+</script>
+
+</html>

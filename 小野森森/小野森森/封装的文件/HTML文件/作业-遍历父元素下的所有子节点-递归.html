@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>
+            <a href="">a链接</a>
+        </p>
+        <ul>
+            <li>
+                <a href="">
+                  a标签
+                </a>
+            </li>
+            <li>123</li>
+            <li>123</li>
+        </ul>
+        <div>
+            <h1>h1标签</h1>
+            <span>span标签</span>
+            <div>
+                <a href="">123</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    /*
+     * 不会的题目
+     * https://ke.qq.com/course/329070/14175277567772014 52分钟讲解
+     */
+    let oDiv = document.getElementsByTagName("div")[0]
+
+    function recursion(node) {
+        let children = node.childNodes,
+            length = children.length,
+            item;
+
+        // 递归出口
+        if (node && node.nodeType === 1) {
+            console.log(node);
+        }
+
+        // 递归
+        for (let i = 0; i < length; i++) {
+            item = children[i]
+            if (item.nodeType === 1) {
+                recursion(item)
+            }
+        }
+    }
+    recursion(oDiv)
+</script>
+
+</html>

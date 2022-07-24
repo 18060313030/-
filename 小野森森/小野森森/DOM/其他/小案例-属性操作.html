@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .normal {
+            color: green
+        }
+        
+        .warning {
+            color: yellow;
+        }
+        
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="normal">正常运行.....</p>
+</body>
+<script>
+    let p = document.getElementsByTagName("p")[0]
+
+    function setSystemStatus(status) {
+        p.setAttribute("class", status)
+        switch (status) {
+            case "normal":
+                p.innerHTML = "正常运行....."
+                break
+            case "warning":
+                p.innerHTML = "系统有警告信息！！！"
+                break
+            case "error":
+                p.innerHTML = "系统发生故障！！！"
+                break
+            default:
+                p.innerHTML = "未知状态"
+        }
+    }
+    setSystemStatus("error")
+</script>
+
+</html>

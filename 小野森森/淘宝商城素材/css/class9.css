@@ -1,0 +1,103 @@
+.main-show .tb-tip{
+	height: 26px;
+}
+
+.main-show .tb-tip a{
+	display: block;
+	position: relative;
+	height: 100%;
+	padding-left: 82px;
+	background-color: #ffe4dd;
+	color: #f40;
+	line-height: 26px;
+	font-size: 12px;
+}
+
+.main-show .tb-tip a .fa{
+	position: absolute;
+	top: 8px;
+	right: 52px;
+}
+
+.main-show .tb-notice{
+	height: 108px;
+	padding-top: 10px;
+	background-color: #fff;
+}
+
+.main-show .tb-notice .notice-tab-list{
+	width: 292px;
+	height: 24px;
+	margin: 4px -2px 0 0;
+	padding: 0 9px;
+}
+
+.main-show .tb-notice .notice-tab-list .tab-item{
+	float: left;
+	width: 32px;
+	height: 22px;
+	margin: 0 11px;
+	border-bottom: 2px solid transparent;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+}
+
+.main-show .tb-notice .notice-tab-list .tab-item a{
+	color: #3c3c3c;
+}
+
+.main-show .tb-notice .notice-tab-list .tab-item a:hover{
+	color: #ff5000;
+}
+
+.main-show .tb-notice .notice-tab-list .tab-item.active{
+	border-color: #f40;
+}
+
+.main-show .tb-notice .notice-tab-list .tab-item.active a{
+    font-weight: bold;
+}
+
+.main-show .tb-notice .tb-notice-bd{
+	height: 65px;
+	padding: 0 12px;
+}
+
+.main-show .tb-notice .tb-notice-bd .notice-list{
+	height: 65px;
+	padding: 9px 0 6px;
+}
+
+.main-show .tb-notice .tb-notice-bd .notice-list .notice-item{
+	float: left;
+	height: 25px;
+	line-height: 25px;
+	margin-right: 8px;
+}
+
+.main-show .tb-notice .tb-notice-bd .notice-list .notice-item a{
+	font-size: 12px;
+	color: #3c3c3c;
+}
+
+.main-show .tb-notice .tb-notice-bd .notice-list .notice-item a:hover{
+	color: #f40;
+}
+
+.main-show .tb-notice .tb-notice-bd .notice-list .notice-item a.hl{
+	color: #f40;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

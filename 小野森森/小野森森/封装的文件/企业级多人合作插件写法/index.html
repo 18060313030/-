@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        width: 30px;
+        height: 30px;
+    }
+</style>
+
+<body>
+    <input type="text" class="j_num1" />
+    <input type="text" class="j_num2" />
+    <br/><br/>
+    <div class="btnGroup">
+        <button data-calcu="add">+</button>
+        <button data-calcu="minus">-</button>
+        <button data-calcu="multi">*</button>
+        <button data-calcu="div">/</button>
+    </div>
+</body>
+<script src="./utils.js"></script>
+<script src="./index.js"></script>
+<script>
+    let num1 = document.getElementsByClassName("j_num1")[0],
+        num2 = document.getElementsByClassName("j_num2")[0],
+        btns = document.getElementsByClassName("btnGroup")[0];
+    new Compute({
+        num1: num1,
+        num2: num2,
+        btns: btns
+    }).init()
+</script>
+
+</html>

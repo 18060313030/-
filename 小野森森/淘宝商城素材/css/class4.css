@@ -1,0 +1,93 @@
+.main-show{
+	height: 632px;
+}
+
+.main-show .main-show-wrap{
+	float: left;
+	width: 900px;
+	height: 632px;
+}
+
+.main-show .main-show-t{
+	height: 522px;
+	margin-bottom: 10px;
+}
+
+.main-show .main-show-t .nav-menu{
+	float: left;
+	width: 190px;
+	height: 522px;
+	border-left: 1px solid #ff5000;
+	border-right: 1px solid #ff5000;
+	border-bottom: 1px solid #ff5000;
+}
+
+.main-show .main-show-t .nav-menu .menu-list{
+	height: 522px;
+	padding: 5px 0 3px;
+}
+
+.main-show .main-show-t .nav-menu .menu-list .menu-item{
+	position: relative;
+	height: 32px;
+	padding: 0 19px 0 25px;
+	line-height: 32px;
+	font-size: 14px;
+	color: #666;
+}
+
+.main-show .main-show-t .nav-menu .menu-list .menu-item:hover{
+	background-color: #FFEEE5;
+	color: #ff5000;
+}
+
+.main-show .main-show-t .nav-menu .menu-list .menu-item:hover a,
+.main-show .main-show-t .nav-menu .menu-list .menu-item:hover i{
+	color: #ff5000;
+}
+
+.main-show .main-show-t .nav-menu .menu-list .menu-item .menu-link{
+	font-size: 14px;
+	color: #666;
+}
+
+.main-show .main-show-t .nav-menu .menu-list .menu-item .menu-link:hover{
+	text-decoration: underline;
+}
+
+.main-show .main-show-t .nav-menu .menu-list .menu-item .fa{
+	position: absolute;
+	top: 9px;
+	right: 10px;
+	color: #999;
+}
+
+.main-show .main-show-t .sliders{
+	float: left;
+	width: 520px;
+	height: 512px;
+	margin: 10px 0 0 10px;
+}
+
+.main-show .main-show-t .hot-sales{
+	float: left;
+	width: 160px;
+	height: 512px;
+	margin: 10px 0 0 10px;
+	background-color: #ddd;
+}
+
+.main-show .tb-headline{
+	width: 890px;
+	height: 100px;
+	margin-right: 10px;
+	padding: 14px 14px 12px 20px;
+	background-color: #fff;
+}
+
+.main-show .funcs-wrap{
+	float: left;
+	width: 290px;
+	height: 100%;
+    margin-top: 10px;
+}

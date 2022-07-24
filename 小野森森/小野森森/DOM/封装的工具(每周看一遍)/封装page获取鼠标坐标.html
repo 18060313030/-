@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+</body>
+<script>
+    let oDiv = document.getElementsByTagName("div")[0]
+    oDiv.onclick = function(e) {
+        var e = e || window.event
+        console.log(getScrollOffset().top, window.pageYOffset, document.documentElement.clientTop, e.clientY);
+        console.log("===========");
+        console.log(pageResemble(e).top, e.pageY);
+    }
+
+    /*
+     * pageX/Y可以计算出包含滚动距离的鼠标点击坐标,但是有兼容性问题
+     * 封装一个相同功能的函数
+     * 求出滚动出视口的距离 + 当前视口的距离 - 偏移的距离
+     * 有点问题,当滚动条拉动到【底部】，window.pageYOffset获取的值会有0.5-0.8的差距
+     * 拉动到【顶部】，就又恢复了
+     */
+    function pageResemble(e) {
+        let scrollY = getScrollOffset().top, // 滚动出屏幕的距离
+            scrollX = getScrollOffset().left,
+            offsetX = document.documentElement.clientLeft || 0, // 文档偏移值,IE8之外的浏览器可能该值为undefined
+            offsetY = document.documentElement.clientTop || 0
+
+        return {
+            // left: Math.round(e.clientX + scrollX - offsetX),
+            // top: Math.round(e.clientY + scrollY - offsetY)
+            left: e.clientX + scrollX - offsetX,
+            top: e.clientY + scrollY - offsetY
+        }
+    }
+
+    /*
+     * 处理获取页面滚动距离   兼容性处理
+     */
+
+    function getScrollOffset() {
+        if (window.pageXOffset) {
+            return {
+                left: window.pageXOffset,
+                top: window.pageYOffset
+            }
+        } else {
+            return {
+                // 在IE678版本中，怪异模式不支持document.documentElement.scrollLeft，标准模式不支持document.body.scrollLeft
+                left: document.body.scrollLeft + document.documentElement.scrollLeft,
+                top: document.body.scrollTop + document.documentElement.scrollTop
+            }
+        }
+    }
+</script>
+
+</html>

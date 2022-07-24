@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            background-color: #000;
+        }
+        
+        .snakeWrap .bodyEle {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgb(173, 216, 230);
+        }
+        
+        .snakeWrap .bodyEle.head {
+            background-color: rgb(250, 15, 15);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="snakeWrap">
+
+        </div>
+    </div>
+</body>
+<script>
+    init()
+
+    // 初始化模块
+    function init() {
+        initGame()
+    }
+
+    // 编写自定义的模块
+    function initGame() {
+        function Snake() {
+            this.snakeBody = [{
+                x: 0,
+                y: 0
+            }, {
+                x: 0,
+                y: 20
+            }, {
+                x: 0,
+                y: 40
+            }, {
+                x: 0,
+                y: 60
+            }, {
+                x: 0,
+                y: 80
+            }, ]
+        }
+
+        Snake.prototype = {
+            init() {
+                this.initSnake()
+            },
+
+            // 各种事件
+            bindEvent() {
+
+            },
+
+            // 初始化贪吃蛇身体
+            initSnake() {
+                let arr = this.snakeBody,
+                    arrLen = arr.length,
+                    frag = document.createDocumentFragment(),
+                    snakeWrap = document.getElementsByClassName("snakeWrap")[0],
+                    item // 蛇身上的单个点信息
+                for (let i = 0; i < arrLen; i++) {
+                    item = arr[i]
+                    let oI = document.createElement("i")
+                    oI.className = "bodyEle"
+                    oI.style.left = item.x + "px"
+                    oI.style.top = item.y + "px"
+                    oI.className = i === arrLen - 1 ? "bodyEle head" : 'bodyEle'
+                    frag.appendChild(oI)
+                }
+                snakeWrap.appendChild(frag)
+            }
+        }
+
+        return new Snake().init()
+    }
+</script>
+
+</html>

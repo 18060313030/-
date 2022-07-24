@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重写reduce</title>
+</head>
+
+<body>
+    <div id="j_cookie">
+        name=asdafsfew; age=12; hobby=dwdsfasfcc; income=1200000;
+    </div>
+</body>
+<script src="./utils.js"></script>
+<script>
+    let cookie = document.getElementById("j_cookie").innerText,
+        cookieArr = cookie.split("; ");
+
+
+    // 重写reduce   增加传入第三个参数，修改回调函数的this指向
+    Array.prototype.myReduce = function(fn, initValue) {
+        let arr = this,
+            arrLength = arr.length,
+            _self = arguments[2] || window,
+            item;
+
+        for (let i = 0; i < arrLength; i++) {
+            item = cloneDeep(arr[i]) // 深拷贝
+            initValue = fn.apply(_self, [initValue, item, i, arr])
+        }
+        return initValue
+    }
+
+    /**
+     * reduce()方法 
+     * arr.reduce(function(prev, elem, index, arr){}, initValue)
+     * 第二个参数传入一个初始值，该初始值就是prev的初始值
+     * 每次return prev 都会将数据进行归纳,也就是下一次的prev是上一次归纳了数据之后的prev
+     */
+    let obj = cookieArr.myReduce(function(prev, elem) {
+        let item = elem.split("=") // 数组里面每个元素都是字符串格式  income=1200000
+        prev[item[0]] = item[1] // 第二个参数{}就是prev的初始值。 obj["income"] = 120000
+        console.log(this);
+        return prev
+    }, {}, {
+        name: "zss"
+    })
+    console.log(obj);
+</script>
+
+</html>

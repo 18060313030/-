@@ -1,0 +1,6 @@
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;  // 单个单词过长不会换行/加省略号，写这句话就可以了

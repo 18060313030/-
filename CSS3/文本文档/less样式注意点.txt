@@ -1,0 +1,9 @@
+给元素设置一个可变的类 
+ <a class="current"></a>
+
+在less文件中设置如下：表示选中a并且样式为current的时候，字体颜色改变，可以用来修改点中链接修改颜色
+  a{
+    &.current{
+      color : white
+    }
+  }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    window.onload = function() {
+        init()
+    }
+
+    // 整合两个程序员开发的功能
+    function init() {
+        console.log(initFb(5));
+        console.log(compute(5));
+    }
+
+    // 斐波那契数列 a程序员开发的功能
+    let initFb = (function() {
+        function fibonacci(n) {
+            if (n <= 0) return 0
+            if (n <= 1) return 1
+            return fibonacci(n - 1) + fibonacci(n - 2)
+        }
+        return fibonacci
+    })()
+
+    // 被3或5或7整除的数 b程序员开发的功能
+    let compute = (function() {
+        return function(n) {
+            let arr = []
+            for (let i = 0; i <= n; i++) {
+                if (i % 3 === 0 || i % 5 === 0 || i % 7 === 0) {
+                    arr.push(i)
+                }
+            }
+            return arr
+        }
+    })()
+</script>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <!-- 我是注释 -->
+            <a href="">标签</a>
+            <p>p标签</p>
+            <h1>h1标签</h1>
+        </li>
+    </ul>
+</body>
+<script>
+    let li = document.getElementsByTagName("li")[0]
+
+    // 根据节点的属性nodeType过滤出元素节点
+    function elemChild(node) {
+        let arr = [],
+            nodeLength = node.childNodes.length;
+        for (let i = 0; i < nodeLength; i++) {
+            let child = node.childNodes[i] // 将子节点进行缓存,提升性能
+            if (child.nodeType === 1) {
+                arr.push(child)
+            }
+        }
+        return arr
+    }
+    console.log(elemChild(li));
+</script>
+
+</html>

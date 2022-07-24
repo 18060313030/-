@@ -1,0 +1,24 @@
+文件--首选项--配置用户代码片段
+搜索Vue.json
+
+往里面添加
+	"Print5 to console": {
+		"prefix": "vue3", // 快捷方式输入
+		// 编译的模板
+		"body": [
+			"<template>",
+			"\t<div></div>",
+			"</template>",
+			"",
+			"<script lang=\"ts\">",
+			"\timport { defineComponent } from 'vue'",
+			"\texport default defineComponent({",
+			"\t\tname: 'App'",
+			"\t})",
+			"</script>",
+			"",
+			"<style>",
+			"",
+			"</style>"
+		]
+	}

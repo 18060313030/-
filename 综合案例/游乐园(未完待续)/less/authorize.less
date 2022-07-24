@@ -1,0 +1,57 @@
+@import "./base.less";
+@import "./normalize.less";
+
+@rootSize: 37.5rem;
+
+// 图标
+.logo{
+  margin: 0 auto;
+  width: (313 / @rootSize);
+  border-bottom: 1px solid #DEDEDE;
+  img{
+    width: (75 / @rootSize);
+    height: (75 / @rootSize);
+    margin: (36 / @rootSize) auto 0;
+  }
+  h2{
+    margin-bottom: (24 / @rootSize);
+    font-size: (18 / @rootSize);
+    color: #242424;
+    text-align: center;
+  }
+}
+.content{
+  margin: (28 / @rootSize) auto 0;
+  width: (313 / @rootSize);
+  h3{
+    font-size: (17 / @rootSize);
+    color: #242424;
+  }
+  p{
+    position: relative;
+    margin-top: (17 / @rootSize);
+    text-indent: 1em;
+    font-size: (15 / @rootSize);
+    color: #979797 ;
+    span{
+      position: absolute;
+      top: (7 / @rootSize);
+      left: 0;
+      width: (4 / @rootSize);
+      height: (4 / @rootSize);
+      border-radius: 50%;
+      background-color: #979797 ;
+    }
+  }
+  a{
+    display: block;
+    margin-top: (48 / @rootSize);
+    width: (313 / @rootSize);
+    height: (47 / @rootSize);
+    background-color: #02BE00 ;
+    color: #fff;
+    font-size: (18 / @rootSize);
+    text-align: center;
+    line-height: (47 / @rootSize);
+  }
+}

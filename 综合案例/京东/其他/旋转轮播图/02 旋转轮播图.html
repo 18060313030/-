@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<!-- 
+		旋转轮播图这个效果我们需要用到  透视perspective , 过渡transform 还有transform-style: preserve-3d
+	 -->
+	<style>
+		body {
+			/* perspective属性定义的是 3D元素的灭点位置与视图之间的距离
+				（可以认为perspective是设置元素灭点位置在Z轴方向上的距离），以像素计。
+				perspective属性值越大，灭点与视图的距离越大（也就意味着延长线越长），
+				元素的变形就越小，看到的3D效果越不明显；
+				perspective属性值越小，灭点与视图的距离越小（也就意味着延长线越短），
+				元素的变形就越大，看到的3D效果越明显 
+				注意： 
+				- 没有设置 perspective属性的元素，默认都是2D元素，是没有Z轴的；
+					如果想要变成3D元素，就需要给元素设置 perspective属性
+				- perspective 属性只影响执行transform 3D转换函数的元素。
+				- 当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身，
+					所以 perspective 属性一般设置给父元素，这样就能作用于所有3D转换的子元素
+			 */
+			perspective: 1000px;
+		}
+
+		section {
+			width: 300px;
+			height: 200px;
+			margin: 100px auto;
+			/* 居中的老鹰背景图 */
+			background: url(images/img-1.jpg) no-repeat;
+			/* cover：自动调整缩放比例，保证图片始终填充满(完整覆盖)背景区域，如有溢出部分则会被隐藏。
+				我们平时用cover 最多   
+				(cover 的实现过程是这样的：等比例缩放图片，直到背景图片的宽和高都大于等于盒子的宽和高，就停止缩放， 
+				 所以这个过程中就会有一部分图片内容超出盒子区域而被隐藏，但是图片的宽高比是不变的) */
+			background-size: cover;
+			/* 子绝父相 */
+			position: relative;
+			/* 让此元素中的子元素以3d效果显示。
+				当为元素定义 transform-style 属性时，其子元素会获得 3D 空间的呈现效果，而不是元素本身，
+				所以 transform-style 属性一般设置给父元素，这样就能作用于所有3D转换的子元素*/
+			transform-style: preserve-3d;
+			/* 过渡动画 */
+			transition: 5s linear;
+		}
+
+		/* 鼠标悬浮时就旋转 */
+		section:hover {
+			transform: rotateY(360deg);
+		}
+
+		section div {
+			width: 100%;
+			height: 100%;
+			background: url(images/dog.gif) no-repeat;
+			background-size: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		/* 正面的一张图 */
+		section div:nth-child(1) {
+			/* tanslateZ 方法的参数值越大，越接近视点，元素也就显示得越大 */
+			/* 注意：如果没有给元素的父容器设置 perspective 属性，该元素就默认是2D元素，是没有Z轴的，也就无法使用translateZ(z)方法；
+				如果想要变成3D元素，就需要先给元素的父容器设置 perspective属性 */
+			transform: rotateY(0deg) translateZ(400px);
+		}
+
+		/* 右边的第一张图 */
+		section div:nth-child(2) {
+			transform: rotateY(60deg) translateZ(400px);
+		}
+
+		section div:nth-child(3) {
+			transform: rotateY(120deg) translateZ(400px);
+		}
+
+		/* 背面的一张图 */
+		section div:nth-child(4) {
+			transform: rotateY(180deg) translateZ(400px);
+		}
+
+		section div:nth-child(5) {
+			transform: rotateY(240deg) translateZ(400px);
+		}
+
+		/* 左边的第一张图 */
+		section div:nth-child(6) {
+			transform: rotateY(300deg) translateZ(400px);
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+</body>
+
+</html>

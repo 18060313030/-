@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .father {
+            width: 300px;
+            height: 500px;
+            border: 1px solid black;
+        }
+
+        .son1,
+        .son2 {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+
+        /* 用来包裹 son1， 让这两个元素分别处于不同的BFC容器内，就不会发生垂直方向的margin重叠了。 */
+        .over {
+            /* overflow 属性值不为 visible，就可以触发BFC */
+            overflow: hidden;
+        }
+
+        .son1 {
+            margin-bottom: 50px;
+        }
+
+        .son2 {
+            background-color: red;
+            margin-top: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="over">
+            <!--用over包裹son1，使得son1 就和 son2 不处于同一个BFC容器内，就不会发生垂直方向的margin合并问题了-->
+            <div class="son1"></div>
+        </div>
+        <div class="son2"></div>
+    </div>
+</body>
+
+</html>

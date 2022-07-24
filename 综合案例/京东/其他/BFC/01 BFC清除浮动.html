@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 
+        要触发BFC，满足下列的任意一个或多个条件即可：
+            - 根元素，即HTML元素 
+            - 具有浮动（float 属性值不为 none）
+            - position 属性值为 absolute或fixed
+            - display 属性值为 inline-block, table-cell, table-caption, flex, inline-flex
+            - overflow 属性值不为 visible。
+
+        BFC容器所具有的特性：
+            1. 只有块级盒子（Block-level BOX）处于BFC容器中，盒子从顶端开始垂直地一个接一个地排列.
+            2. 盒子垂直方向的距离由margin决定。处于于同一个BFC容器内的两个相邻元素的margin会发生重叠
+            （垂直外边距合并，具体见上文）
+            3. 在BFC容器中，每一个元素的左外边缘（margin-left）会触碰到容器的左边缘(border-left)
+            （对于从右到左的格式来说，则触碰到右边缘）。
+            4. BFC容器的区域不会与浮动元素产生交集，而是紧贴浮动边缘。
+            5. 计算BFC容器的高度时，容器内的浮动(float)或者定位(position)的元素高度也会被计算在内。
+            （通过这一特性就能实现清除浮动）
+     -->
+    <style>
+        .father {
+            width: 300px;
+            border: 1px solid red;
+
+            /* overflow 属性值不为 visible，就可以触发BFC */
+            /* overflow: hidden; */
+
+            /* 具有浮动（float 属性值不为 none），就可以触发BFC */
+            /* float: left; */
+
+            /* position为absolute或fixed，就可以触发BFC */
+            /*  计算BFC容器的高度时，容器内的浮动(float)或者定位(position)的元素高度也会被计算在内。
+                （通过这一特性就能实现清除浮动） */
+            position: absolute;
+        }
+
+        .son1,
+        .son2 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            float: left;
+        }
+
+        .son2 {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+    </div>
+</body>
+
+</html>

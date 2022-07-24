@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>+</button>
+</body>
+<script>
+    ;
+    (function(doc) {
+        let oBtn = doc.getElementsByTagName("button")[0]
+
+        function Plus(opt) {
+            this.a = opt.a;
+            this.b = opt.b;
+            this.init()
+        }
+        Plus.prototype.init = function() {
+            this.addEvent()
+        }
+        Plus.prototype.addEvent = function() {
+            // // 第一种方式处理：事件函数中的this都是指向被绑定的DOM元素,
+            // // 所以需要将函数里面的this指向Plus构造函数
+            // oBtn.addEventListener("click", this.handler.call(this), false)
+
+            // 第二种方式处理
+            let _self = this
+            oBtn.addEventListener("click", function() {
+                // 在外部保存一个this,因为这里面的this是指向被绑定的按钮元素
+                _self.handler()
+            }, false)
+        }
+        Plus.prototype.handler = function() {
+            console.log(this);
+            1
+            console.log(this.a + this.b);
+        }
+        window.Plus = Plus
+    })(document)
+    new Plus({
+        a: 1,
+        b: 2
+    })
+</script>
+
+</html>

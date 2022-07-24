@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let div = document.createElement("div") // 创建div元素节点
+    div.setAttribute("id", "box") // 给div添加id属性
+    let ul = document.createElement("ul") // 创建ul元素节点
+    ul.className = "list" // 给元素节点添加类名
+    let frag = document.createDocumentFragment() // 创建文档碎片
+    for (let i = 0; i < 5; i++) { // 循环创建li元素节点，添加到文档碎片中
+        let li = document.createElement("li")
+        li.innerHTML = i
+        li.className = "list-item"
+        frag.appendChild(li)
+    }
+    ul.appendChild(frag) // ul下添加子节点文档碎片
+    div.appendChild(ul) // div下添加子节点div
+    document.body.appendChild(div) // body下添加子节点div
+</script>
+
+</html>

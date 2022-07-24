@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>111</p>
+        <a href="#">222</a>
+        <h1>333</h1>
+        <span>444</span>
+    </div>
+</body>
+<script>
+    /*
+     * 不会的题目
+     * https://ke.qq.com/course/329070/14175277567772014  1小时02分
+     * 使用appendChild
+     */
+    let oDiv = document.getElementsByTagName("div")[0]
+
+    Element.prototype.reverse = function() {
+        let childs = this.childNodes,
+            length = childs.length - 1;
+
+        // appendChild 可以动态的剪切节点
+        while (length) {
+            this.appendChild(childs[--length]) // 将末尾元素剪切到头部
+                // 就是先将span剪切到末尾(虽然他本来就在末尾)，再将h1剪切到末尾，以此类推
+        }
+    }
+    oDiv.reverse()
+</script>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+    }
+    
+    .box {
+        margin: 20px;
+        width: 120px;
+    }
+    
+    .menu {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+        text-align: center;
+        color: #fff;
+        line-height: 40px;
+        background-color: #000;
+        text-decoration: none;
+    }
+    
+    .menu::after {
+        content: "↓";
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        font-size: 14px;
+        color: #fff;
+    }
+    
+    .menu.active::after {
+        content: "↑";
+    }
+    
+    .item_list {
+        width: 100%;
+        /* 高度设为0 溢出部分隐藏 li就不会显示了 */
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .item {
+        width: 100%;
+        height: 30px;
+        background-color: #333;
+        text-align: center;
+        color: #999;
+        line-height: 30px;
+        border-bottom: 1px solid #666;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <a href="#" class="menu">下拉菜单</a>
+        <ul class="item_list">
+            <li class="item">菜单选项</li>
+            <li class="item">菜单选项</li>
+            <li class="item">菜单选项</li>
+            <li class="item">菜单选项</li>
+            <li class="item">菜单选项</li>
+        </ul>
+    </div>
+</body>
+<script>
+    let menu = document.getElementsByClassName("menu")[0],
+        list = document.getElementsByClassName("item_list")[0],
+        timer = null,
+        speed = 2,
+        listHeight = 0;
+    // 鼠标移入
+    menu.onmouseenter = function() {
+        clearInterval(timer) // 防止下拉列表抖动
+
+        // 设置定时器
+        timer = setInterval(function() {
+            if (listHeight >= 150) { // 如果下拉列表全部显示了，就清除定时器
+                clearInterval(timer)
+            } else {
+                /* 
+                 * getEleValue(ele, 元素属性) 这是一个封装的方法，可以用来获取元素的所有属性。
+                 * getEleValue(list, "height") 获取的值为 0px 需要进行数字转换 parseInt('0px') === 0
+                 */
+                listHeight = parseInt(getEleValue(list, "height")) + speed
+                list.style.height = listHeight + "px" // 记住加单位啊啊啊啊啊啊
+            }
+        }, 10)
+
+        this.className += " active" // 箭头样式的修改
+    }
+
+    // 鼠标移出
+    menu.onmouseleave = function() {
+        clearInterval(timer) // 防止下拉列表抖动
+
+        // 设置定时器
+        timer = setInterval(function() {
+            if (listHeight <= 0) {
+                clearInterval(timer)
+            } else {
+                listHeight = parseInt(getEleValue(list, "height")) - speed
+                list.style.height = listHeight + "px"
+            }
+        }, 10)
+
+        this.className = "menu" // 箭头样式的修改
+    }
+
+    /*
+     * 获取值的方法，获取的值比较准
+     */
+
+    function getEleValue(ele, prop) {
+        // 判断该属性方法是否存在
+        if (window.getComputedStyle) {
+            if (prop) { // 是否有传入指定的属性
+                return window.getComputedStyle(ele, null)[prop]
+            } else { // 没有传入指定的属性，返回整个集合
+                return window.getComputedStyle(ele, null)
+            }
+        } else { // 使用ie8及以下兼容的方法
+            if (prop) {
+                return ele.currentStyle[prop]
+            } else {
+                return ele.currentStyle
+            }
+        }
+    }
+</script>
+
+</html>

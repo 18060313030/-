@@ -1,0 +1,79 @@
+.main-show .tb-apps{
+	height: 111px;
+	padding-top: 1px;
+	background-color: #fff;
+}
+
+.main-show .tb-apps .tb-apps-wrap{
+	height: 110px;
+}
+
+.main-show .tb-apps .tb-apps-wrap h3{
+	height: 30px;
+	padding-left: 14px;
+	color: #000;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+.main-show .tb-apps .tb-apps-wrap h3 a{
+	float: right;
+	margin-right: 15px;
+	color: #3c3c3c;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.main-show .tb-apps .tb-apps-wrap h3 a:hover{
+	color: #f40;
+}
+
+.main-show .tb-apps .tb-apps-wrap .apps-list{
+	padding-left: 23px;
+}
+
+.main-show .tb-apps .tb-apps-wrap .apps-list .app-item{
+    float: left;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    margin: 0 21px 8px 0;
+}
+
+.main-show .tb-apps .tb-apps-wrap .apps-list .app-item:hover .app-qr{
+    display: block;
+}
+
+.main-show .tb-apps .tb-apps-wrap .apps-list .app-item .app-icon{
+	width: 100%;
+}
+
+.main-show .tb-apps .tb-apps-wrap .apps-list .app-item .app-qr{
+	display: none;
+	position: absolute;
+	top: -110px;
+	left: 50%;
+	width: 90px;
+	height: 102px;
+	margin-left: -45px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+.main-show .tb-apps .tb-apps-wrap .apps-list .app-item .app-qr .qr-wrap{
+	width: 90px;
+	height: 78px;
+	padding: 12px 12px 0;
+}
+
+.main-show .tb-apps .tb-apps-wrap .apps-list .app-item .app-qr .qr-wrap img{
+	width: 100%;
+}
+
+.main-show .tb-apps .tb-apps-wrap .apps-list .app-item .app-qr p{
+	line-height: 24px;
+	text-align: center;
+	font-size: 12px;
+	color: #666;
+}

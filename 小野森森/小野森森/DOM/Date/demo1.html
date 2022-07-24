@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>5秒后跳转百度</p>
+    <button>取消跳转</button>
+</body>
+<script>
+    let oBtn = document.getElementsByTagName("button")[0]
+    let oP = document.getElementsByTagName("p")[0]
+    let n = 5
+    let timer1 = setInterval(function() {
+        oP.innerHTML = --n + "秒后跳转百度"
+    }, 1000)
+    let timer2 = setTimeout(function() {
+        location.href = "https://www.baidu.com"
+    }, 5000)
+
+    oBtn.onclick = function() {
+        clearTimeout(timer2)
+        clearInterval(timer1)
+    }
+</script>
+
+</html>

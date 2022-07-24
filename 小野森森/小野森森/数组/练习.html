@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重写every</title>
+</head>
+
+<body>
+    <div id="j_cookie">
+        name=asdafsfew; age=12; hobby=dwdsfasfcc; income=1200000;
+    </div>
+</body>
+<script src="./utils.js"></script>
+<script>
+    let cookie = document.getElementById("j_cookie").innerText,
+        infoArr = cookie.split("; ");
+
+    Array.prototype.myReduce = function(fn, prev) {
+        let arr = this,
+            arrLen = arr.length,
+            _self = arguments[2] || window,
+            item;
+        for (let i = 0; i < arrLen; i++) {
+            item = cloneDeep(arr[i])
+            prev = fn.apply(_self, [prev, item, i, arr])
+        }
+        return prev
+    }
+
+    let res = infoArr.myReduce(function(prev, ele, index, arr) {
+        let item = ele.split("=")
+        prev[item[0]] = item[1]
+        return prev
+    }, {})
+    console.log(res);
+</script>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <!-- 我是注释 -->
+            <a href="">标签</a>
+            <p>p标签</p>
+            <h1>h1标签</h1>
+        </li>
+    </ul>
+</body>
+<script>
+    // 在原型上编程
+    // 遍历任意一个父元素，找到他的子元素节点
+    // 有数字参数 -> 某一个对应的子元素
+    // 没有数字参数 -> 子元素节点的集合
+    let li = document.getElementsByTagName("li")[0]
+
+    Element.prototype.ergodic = function(index) {
+        let obj = {
+            length: 0,
+            splice: Array.prototype.splice,
+        }
+        let childEle = this.childNodes, // 父元素节点下的子节点
+            eleLength = childEle.length // 父元素节点下的子节点长度
+
+        // 先全部获取到obj中
+        for (let i = 0; i < eleLength; i++) {
+            if (childEle[i].nodeType === 1) {
+                obj[obj.length] = childEle[i]
+                obj.length++
+            }
+        }
+        if (index !== undefined && typeof(index) !== "number") { // 传入的参数不为数字
+            return undefined
+        }
+        // else if (index === undefined) { // 没有传入参数
+        //     return obj
+        // } else if (typeof(index) === "number") { // 传入了参数,获取对应的元素节点
+        //     return obj[index]
+        // }
+        return index === undefined ? obj : obj[index]
+    }
+    console.log(li.ergodic(1));
+</script>
+
+</html>

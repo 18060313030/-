@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<!-- 
+		transform-style属性是3D空间一个重要属性，它规定了如何在 3D 空间中呈现某个元素中的子元素。
+
+		语法
+			transform-style: flat | preserve-3d;
+
+			值          	描述    
+			-------------------------------------------                         
+			flat       		默认值。子元素将不保留其 3D 位置，表示子元素在2D平面呈现
+			preserve-3d		子元素将保留其 3D 位置，表示子元素在3D空间中呈现。   
+	 -->
+	<style>
+		body {
+			/* perspective属性定义的是 3D元素的灭点位置与视图之间的距离
+				（可以认为perspective是设置元素灭点位置在Z轴方向上的距离），以像素计。
+				perspective属性值越大，灭点与视图的距离越大（也就意味着延长线越长），
+				元素的变形就越小，看到的3D效果越不明显；
+				perspective属性值越小，灭点与视图的距离越小（也就意味着延长线越短），
+				元素的变形就越大，看到的3D效果越明显 
+				注意： 
+				- 没有设置 perspective属性的元素，默认都是2D元素，是没有Z轴的；
+					如果想要变成3D元素，就需要给元素设置 perspective属性
+				- perspective 属性只影响执行transform 3D转换函数的元素。
+				- 当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身，
+					所以 perspective 属性一般设置给父元素，这样就能作用于所有3D转换的子元素
+			 */
+			perspective: 1000px;
+		}
+
+		div {
+			width: 100px;
+			height: 145px;
+			border: 5px solid red;
+			margin: 100px auto;
+			transform: rotateY(30deg);
+			/* 让此元素中的子元素以3d效果显示。
+				当为元素定义 transform-style 属性时，其子元素会获得 3D 空间的呈现效果，而不是元素本身，
+				所以 transform-style 属性一般设置给父元素，这样就能作用于所有3D转换的子元素*/
+			transform-style: preserve-3d;
+
+		}
+
+		div img {
+			transform: rotateY(30deg);
+			border: 5px solid blue;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<img src="images/pk1.png" width="100" alt="">
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+</body>
+<script>
+    Date.prototype.clock = function() {
+        // this：直接从调用者处传入时间，不需要在方法里面new Date()
+        let YY = this.getFullYear(),
+            MM = patchZero(this.getMonth() + 1),
+            DD = patchZero(this.getDate()),
+            hh = patchZero(this.getHours()),
+            mm = patchZero(this.getMinutes()),
+            ss = patchZero(this.getSeconds());
+        return `${YY}-${MM}-${DD} ${hh}:${mm}:${ss}`
+
+        function patchZero(n) {
+            return n > 9 ? n : "0" + n
+        }
+    }
+    let oP = document.getElementsByTagName("p")[0]
+    setInterval(function() {
+        oP.innerHTML = new Date().clock()
+    }, 1000)
+</script>
+
+</html>

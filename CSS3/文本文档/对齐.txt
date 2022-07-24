@@ -1,0 +1,5 @@
+浏览器默认把行内块和行内块对齐当作文字处理，垂直方向默认以基线对齐baseline.
+行内块和行内块  行内块和文字垂直对齐，都是使用vertical-align (baseline,top,bottom,middle) 
+			         或者将行内块元素改成块元素 display:block
+水平对齐可以使用text-align 因为浏览器把他们当成了文字处理
+

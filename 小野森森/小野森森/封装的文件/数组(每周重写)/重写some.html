@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重写some</title>
+</head>
+
+<body>
+    <ul></ul>
+    <div class="wrap" style="display: none">
+        [ { "id":1,"show":true, "name":"《开心超人》", "type":"少儿" }, { "id":2,"show":true, "name":"《神兽金刚》", "type":"少儿" }, {"id":3,"show":true, "name":"《铠甲勇士》", "type":"特摄"}, {"id":4,"show":true, "name":"《奥特曼》", "type":"特摄"}, {"id":5,"show":true, "name":"《鬼吹灯》", "type":"灵异"}]
+    </div>
+</body>
+<script src="./utils.js"></script>
+<script>
+    let oDiv = document.getElementsByClassName("wrap")[0],
+        oUl = document.getElementsByTagName("ul")[0], // ul元素节点对象
+        dataArr = JSON.parse(oDiv.innerHTML) // JSON对象
+
+    // 封装some 和every正好相反
+    Array.prototype.mySome = function(fn) {
+        let arr = this, // 函数this指向数组
+            arrLength = arr.length, // 获取数据长度
+            _self = arguments[1] || window, // forEach(fn, 第二个参数)第二个参数可选,用于修改fn中的this指向
+            result = false
+        for (let i = 0; i < arrLength; i++) {
+            // 判断fn函数返回值，如果是true，就不再往下遍历，直接返回true
+            // 也就是说some中有一个是true就直接返回true,全是false才返回false
+            if (fn.apply(_self, [arr[i], i, arr])) {
+                result = true
+                break
+            }
+        }
+        return result
+    }
+
+    // 使用封装的myEvery函数
+    let value = dataArr.mySome(function(item, index, arr) {
+        return item.type === "少儿"
+    })
+    console.log(value);
+</script>
+
+</html>

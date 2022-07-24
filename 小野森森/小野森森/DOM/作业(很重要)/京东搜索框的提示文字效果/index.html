@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input {
+        outline: none;
+    }
+    
+    .input-wrap {
+        position: relative;
+    }
+    
+    .J_search_input {
+        /* input里面背景设为透明 */
+        background-color: transparent;
+        border: 1px solid #ddd;
+    }
+    
+    .j_kw {
+        position: absolute;
+        left: 5px;
+        top: 4px;
+        font-size: 12px;
+        color: #989898;
+        /* 放到底部,input框才不被遮挡,input的背景色要设为透明 */
+        z-index: -1;
+    }
+    
+    .j_kw.show {
+        display: block;
+        color: #989898;
+    }
+    
+    .j_kw.hide {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="input-wrap">
+        <div class="j_kw" id="j_kw"></div>
+        <input type="text" id="J_search_input" class="J_search_input">
+        <div style="display: none;" class="kw_mock">
+            ["美白护肤", "电子竞技", "积木高玩", "一品服饰", "运动好物"]
+        </div>
+    </div>
+</body>
+<script src="./js/utils.js"></script>
+<script src="./js/index.js"></script>
+<script>
+</script>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蜡笔小新切换图</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="big_image">
+            <ul class="thumb_list">
+                <li class="thumb_item mask">
+                    <a href="#"><img src="./images/lbxx4.jpg" alt=""></a>
+                </li>
+                <li class="thumb_item">
+                    <a href="#"><img src="./images/lbxx5.jpg" alt=""></a>
+                </li>
+                <li class="thumb_item">
+                    <a href="#"><img src="./images/lbxx6.jpg" alt=""></a>
+                </li>
+                <li class="thumb_item">
+                    <a href="#"><img src="./images/lbxx7.jpg" alt=""></a>
+                </li>
+                <li class="thumb_item">
+                    <a href="#"><img src="./images/lbxx8.jpg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+        <div class="small_img">
+            <ul class="slide_list">
+                <li class="slide_item active">
+                    <a href="#"><img src="./images/lbxx4.jpg" alt=""></a>
+                </li>
+                <li class="slide_item">
+                    <a href="#"><img src="./images/lbxx5.jpg" alt=""></a>
+                </li>
+                <li class="slide_item">
+                    <a href="#"><img src="./images/lbxx6.jpg" alt=""></a>
+                </li>
+                <li class="slide_item">
+                    <a href="#"><img src="./images/lbxx7.jpg" alt=""></a>
+                </li>
+                <li class="slide_item">
+                    <a href="#"><img src="./images/lbxx8.jpg" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="./js/index.js"></script>
+<script>
+    let swipeImg = new SwipeImg({
+        thumbImg: "thumb_item",
+        slideImg: "slide_item"
+    })
+</script>
+
+</html>

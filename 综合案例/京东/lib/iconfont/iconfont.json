@@ -1,0 +1,58 @@
+{
+  "id": "3224485",
+  "name": "简略京东项目",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "145491",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "201222",
+      "name": "3.1购物车",
+      "font_class": "31gouwuche",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "253572",
+      "name": "手机充值",
+      "font_class": "shoujichongzhi",
+      "unicode": "e6c8",
+      "unicode_decimal": 59080
+    },
+    {
+      "icon_id": "278744",
+      "name": "下箭头",
+      "font_class": "xiajiantou",
+      "unicode": "e6cc",
+      "unicode_decimal": 59084
+    },
+    {
+      "icon_id": "630085",
+      "name": "向上箭头",
+      "font_class": "xiangshangjiantou",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "2076358",
+      "name": "返回箭头",
+      "font_class": "fanhuijiantou",
+      "unicode": "e8b5",
+      "unicode_decimal": 59573
+    },
+    {
+      "icon_id": "591955",
+      "name": "wxb定位",
+      "font_class": "wxbdingwei",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    }
+  ]
+}

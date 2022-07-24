@@ -1,0 +1,104 @@
+@import 'base';
+
+.wrap{
+    margin: 100px auto;
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    // 头部
+    .todo_hd{
+        position: relative;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background-color:rgb(42, 41, 41);
+        .hd_title{
+            font-weight: normal;
+            color: #fff;
+        }
+        .j_show_input{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            padding: 0px 10px 3px 10px;
+            color: #fff;
+        }
+    }
+    // 添加项目的输入框
+    .input_wrap{
+        display: none;
+        overflow: hidden;
+        width: 100%;
+        height: 40px;
+        border: 1px solid #ddd;
+        .input_bd{
+            float: left;
+            width: 410px;
+            height: 100%;
+            padding: 3px;
+            .j-ipt{
+                width: 100%;
+                height: 100%;
+                text-indent: 0.5em;
+                border: 1px solid #ddd;
+                outline-color: rgb(135, 206, 235);
+            }
+        }
+        .btn_bd{
+            float: left;
+            width: 86px;
+            height: 100%;
+            padding: 3px 3px;
+            .j-addItem{
+                width: 100%;
+                height: 100%;
+                border: 1px solid #ddd;
+                background-color: #fff;  
+                cursor: pointer;
+            }
+        }
+        
+    }
+    // 项目列表 
+    .list_wrap{
+        width: 100%;
+        height: 420px;
+        overflow: auto; // 滚动条
+        // li内部使用两栏布局
+        .item{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            // 文本内容
+            .item_content{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 400px;
+                height: 100%;
+                line-height: 50px;
+                text-indent: 15px;
+            }
+            // 按钮组
+            .btn_group{
+                margin-left: 400px;
+                width: 100%;
+                line-height: 50px;
+                .edit_btn{
+                    margin-left: 15px;
+                    color: rgb(5, 135, 5);
+                }
+                .remove_btn{
+                    margin-left: 15px;
+                    color: rgb(241, 7, 7);
+                }
+            }
+            &:nth-child(even), &:hover{
+                background-color: #eee;
+            }
+        }
+    }
+}

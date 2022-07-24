@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>这是p</p>
+        <a href="#">这是a</a>
+        <ul>
+            <li>这是li</li>
+        </ul>
+    </div>
+</body>
+<script>
+    Node.prototype.insertAfter = function(a, b) {
+        if (b.nextElementSibling) {
+            this.insertBefore(a, b.nextElementSibling)
+        } else {
+            this.appendChild(a)
+        }
+    }
+    let oDiv = document.getElementsByTagName("div")[0],
+        oP = document.createElement("p"),
+        oH1 = document.getElementsByTagName("h1")[0],
+        oSpan = document.getElementsByTagName("span")[0]
+    oP.innerHTML = "插入的p节点"
+    oDiv.insertAfter(oP, oH1)
+</script>
+
+</html>

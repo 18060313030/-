@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重写forEach</title>
+</head>
+
+<body>
+    <ul></ul>
+    <div class="wrap" style="display: none">
+        [ { "id":1,"show":"false", "url":"http://www.itcast.cn/subject/phoneweb/index.html", "img":"http://m.itheima.com/images/slidead/mobile/20191213180241750x410.jpg" }, { "id":2,"show":"true", "url":"http://www.itcast.cn/subject/phoneweb/index.html", "img":"http://m.itheima.com/images/slidead/mobile/20191210154717750-410.jpg"
+        }, { "id":3, "show":"false", "url":"http://www.itcast.cn/subject/phoneweb/index.html", "img":"http://m.itheima.com/images/slidead/mobile/20190327135101750x410-%E4%BC%A0%E6%99%BA%E9%BB%91%E9%A9%AC%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B9%BB%E7%81%AF.jpg"
+        } ]
+    </div>
+</body>
+<script src="./utils.js"></script>
+<script>
+    let oDiv = document.getElementsByClassName("wrap")[0],
+        oUl = document.getElementsByTagName("ul")[0],
+        dataArr = JSON.parse(oDiv.innerHTML)
+        // dataArr.forEach((item, index, arr) => {
+        //     let li = document.createElement("li")
+        //     li.innerHTML = item.url
+        //     oUl.appendChild(li)
+        // })
+
+    // 重写forEach
+    Array.prototype.myForEach = function(fn) {
+        let arr = this, // 函数this指向数组
+            arrLength = arr.length, // 获取数据长度
+            _self = arguments[1] || window // forEach(fn, 第二个参数)第二个参数可选,用于修改fn中的this指向
+
+        for (let i = 0; i < arrLength; i++) {
+
+            fn.apply(_self, [arr[i], i, arr]) // 每次循环都会执行对应的fn函数,fn接收三个参数 （当前元素,元素索引,元素所在的数组）
+        }
+    }
+
+    // 使用重写的forEach
+    dataArr.myForEach((item, index, arr) => {
+        let li = document.createElement("li")
+        li.innerHTML = item.url
+        oUl.appendChild(li)
+    })
+</script>
+
+</html>

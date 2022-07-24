@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+     * Student.prototype === Teacher.prototype，如果Student.prototype 上修改了,Teacher.prototype也会被修改
+     * 通过中间的构造函数，来解决上述问题
+     * 封装对应操作
+     */
+    Teacher.prototype.age = 13
+
+    function Teacher() {}
+
+    function Student() {}
+    inherit(Student, Teacher)
+    let student = new Student()
+    Student.prototype.age = 15
+    let teacher = new Teacher()
+    console.log(student);
+    console.log(teacher);
+
+    function inherit(Target, Origin) {
+        function Buffer() {}
+        Buffer.prototype = Origin.prototype // 中间类的原型指向被继承类（Teacher）的原型
+        Target.prototype = new Buffer() // 继承类原型指向中间类构造的对象
+        Target.prototype.constructor = Target // 继承类（student）的构造器指向自己
+        Target.prototype.super_class = Origin // 继承类的继承源头
+    }
+</script>
+
+</html>

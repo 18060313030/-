@@ -1,0 +1,57 @@
+.contentItem{
+        width: 217px;
+        height: 332px;
+        border: 1px solid #b9b9b9;
+        .radiusTL{
+          position:relative;/*相对于父级对齐*/
+          left:-1px;/*将位置移动-1的目的是覆盖住外边框，千万不能设置overflow:hidden,否者无法覆盖*/
+          top:-1px;
+          width:25px;
+          height:25px;
+          border-right:1px solid #b9b9b9;/*我们保留盒子的下，右边框*/
+          border-bottom:1px solid #b9b9b9;
+          border-radius:0px 0px 40px 0px;/*设置左下角的圆角边框*/
+          background-color:white;/*最后将盒子背景色设置为白色就成功覆盖了外边框*/
+        }
+        .radiusTR{
+          position:relative;/*相对于父级对齐*/
+          right:-191px;/*将位置移动-1的目的是覆盖住外边框，千万不能设置overflow:hidden,否者无法覆盖*/
+          top:-26px;
+          width:25px;
+          height:25px;
+          border-left:1px solid #b9b9b9;/*我们保留盒子的下，右边框*/
+          border-bottom:1px solid #b9b9b9;
+          border-radius:0px 0px 0px 40px;/*设置左下角的圆角边框*/
+          background-color:white;/*最后将盒子背景色设置为白色就成功覆盖了外边框*/
+        }
+        .radiusBR{
+          position:relative;/*相对于父级对齐*/
+          right:-191px;/*将位置移动-1的目的是覆盖住外边框，千万不能设置overflow:hidden,否者无法覆盖*/
+          bottom:-232px;
+          width:25px;
+          height:25px;
+          border-left:1px solid #b9b9b9;/*我们保留盒子的下，右边框*/
+          border-top:1px solid #b9b9b9;
+          border-radius:40px 0px 0px 0px;/*设置左下角的圆角边框*/
+          background-color:white;/*最后将盒子背景色设置为白色就成功覆盖了外边框*/
+        }
+        .radiusBL{
+          position:relative;/*相对于父级对齐*/
+          left:-1px;/*将位置移动-1的目的是覆盖住外边框，千万不能设置overflow:hidden,否者无法覆盖*/
+          bottom:-256px;
+          width:25px;
+          height:25px;
+          border-right:1px solid #b9b9b9;/*我们保留盒子的下，右边框*/
+          border-top:1px solid #b9b9b9;
+          border-radius:0px 40px 0px 0px;/*设置左下角的圆角边框*/
+          background-color:white;/*最后将盒子背景色设置为白色就成功覆盖了外边框*/
+        }
+
+<li class="contentItem">
+                    <div class="radiusTL"></div>
+                    <div class="radiusTR"></div>
+                    <div class="radiusBL"></div>
+                    <div class="radiusBR"></div>
+                </li>
+
+https://blog.csdn.net/BigDippers/article/details/114196638

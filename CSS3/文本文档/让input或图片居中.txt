@@ -1,0 +1,6 @@
+包裹一个容器，然后设置容器样式 text-align: center
+
+<div class="box">
+    <input type="text">
+    <img src="" alt="">
+</div>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>123</h1>
+        <p>543</p>
+        <a href="#">a链接</a>
+        <span>123</span>
+        <b>9999</b>
+    </div>
+    <ul>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+    </ul>
+</body>
+<script>
+    let oDiv = document.getElementsByTagName("div")[0]
+    let oH1 = document.getElementsByTagName("h1")[0]
+    let oA = document.getElementsByTagName("a")[0]
+    Element.prototype.findBrother = function(index) {
+        let _this = this
+
+        // if (index < 0) {
+        //     while (index) {
+        //         _this = _this.previousElementSibling // 往前找兄弟元素节点
+        //         index++
+        //     }
+        // } else if (index > 0) {
+        //     while (index) {
+        //         _this = _this.nextElementSibling // 往后找兄弟元素节点
+        //         index--
+        //     }
+        // }
+
+        /*
+         * 从上面的优化出下面 (上面代码while循环重复了)
+         */
+
+        // while (index) {
+        //     if (index < 0) {
+        //         _this = _this.previousElementSibling // 往前找兄弟元素节点
+        //         index++
+        //     } else if (index > 0) {
+        //         _this = _this.nextElementSibling // 往后找兄弟元素节点
+        //         index--
+        //     }
+        // }
+
+        /*
+         *上述代码，兼容性不好，使用下面的
+         */
+
+        /*
+         * https://ke.qq.com/course/329070/14175277567772014 33分钟有讲
+         * 使用nextElementSibling previousElementSibling 兼容性不好 需要进行兼容性处理
+         */
+
+        while (index) {
+            if (index < 0) {
+                if (_this.previousElementSibling) {
+                    _this = _this.previousElementSibling
+                } else {
+                    for (_this = _this.previousSibling; _this && _this.nodeType !== 1; _this = _this.previousSibling);
+                }
+                index++
+            } else if (index > 0) {
+                if (_this.nextElementSibling) {
+                    _this = _this.nextElementSibling
+                } else {
+                    for (_this = _this.nextSibling; _this && _this.nodeType !== 1; _this = _this.nextSibling);
+                }
+                index--
+            }
+        }
+
+
+        // while (index) {
+        //     if (index > 0) {
+        //         if (_this === null) return _this
+        //         _this = _this.nextSibling
+        //         while (_this && _this.nodeType !== 1) { // 当兄弟节点存在，并且节点不等于元素节点，继续向下找元素节点
+        //             _this = _this.nextSibling
+        //         }
+        //         index--
+        //     } else if (index < 0) {
+        //         if (_this === null) return _this
+        //         _this = _this.previousSibling
+        //         while (_this && _this.nodeType !== 1) {
+        //             _this = _this.previousSibling
+        //         }
+        //         index++
+        //     }
+        // }
+        return _this
+    }
+</script>
+
+</html>

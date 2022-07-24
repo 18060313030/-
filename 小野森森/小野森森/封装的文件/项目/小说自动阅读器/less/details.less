@@ -1,0 +1,58 @@
+@import 'base';
+
+@vm: 3.75vw;
+
+
+// 顶部
+.bk_hd{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: (40 / @vm);
+    text-align: center;
+    color: #fff;
+    font-size: (18 / @vm);
+    line-height: (40 / @vm);
+    background-color: rgb(140, 210, 237);
+    z-index: 1;
+}
+
+// 内容
+.container{
+  padding: (40 / @vm) (10 / @vm) (10 / @vm);
+}
+
+// 回到顶部按钮
+.arrowUp{
+  display: none;
+  &::after{
+      content: "\e601";
+      position: fixed;
+      right: (30 / @vm);
+      bottom: (120 / @vm);
+      width: (40 / @vm);
+      height: (40 / @vm);
+      background-color: rgb(235, 235, 153);
+      border-radius: 50%;
+      text-align: center;
+      line-height: (40 / @vm);
+      font-size: (30 / @vm);
+      font-family: "iconfont";
+  }
+}
+
+.play{
+
+    position: fixed;
+    right: (30 / @vm);
+    bottom: (60 / @vm);
+    width: (40 / @vm);
+    height: (40 / @vm);
+    background-color: rgb(235, 235, 153);
+    border-radius: 50%;
+    text-align: center;
+    line-height: (40 / @vm);
+    font-size: (30 / @vm);
+    font-family: "iconfont";
+}

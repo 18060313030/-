@@ -1,0 +1,70 @@
+.main-show .tb-headline h3{
+	float: left;
+    width: 180px;
+    height: 73px;
+}
+
+.main-show .tb-headline h3 .headline-logo{
+	width: 129px;
+	height: 0;
+	/*margin-top: 14px;*/
+	padding-top: 40px;
+	background: url(../img/headline.png) no-repeat 0 14px/129px 26px;
+	overflow: hidden;
+}
+
+.main-show .tb-headline h3 .sub-title{
+	font-size: 12px;
+	line-height: 24px;
+	color: #999;
+}
+
+.main-show .tb-headline .headline-bd{
+	float: left;
+	position: relative;
+	width: 676px;
+	height: 73px;
+}
+
+.main-show .tb-headline .headline-bd .headline-link:hover h4{
+    color: #ff5000;
+}
+
+.main-show .tb-headline .headline-bd .headline-link:hover img{
+	opacity: .8;
+}
+
+.main-show .tb-headline .headline-bd img{
+	float: left;
+	width: 130px;
+	height: 73px;
+	margin-right: 14px;
+}
+
+.main-show .tb-headline .headline-bd h4{
+	margin-top: 2px;
+	font-size: 16px;
+	line-height: 28px;
+	color: #333;
+}
+
+.main-show .tb-headline .headline-bd p{
+	height: 36px;
+	font-size: 14px;
+	line-height: 18px;
+	color: #999;
+	overflow: hidden;
+}
+
+.main-show .tb-headline .headline-bd .headline-more{
+	position: absolute;
+	top: 0;
+	right: 5px;
+	font-size: 12px;
+	color: #999;
+	z-index: 1;
+}
+
+.main-show .tb-headline .headline-bd .headline-more:hover{
+	color: #ff5000;
+}

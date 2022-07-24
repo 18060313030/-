@@ -1,0 +1,74 @@
+@import 'base';
+
+@vm: 3.75vw;
+
+
+// 顶部
+.bk_hd{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: (40 / @vm);
+    text-align: center;
+    color: #fff;
+    font-size: (18 / @vm);
+    line-height: (40 / @vm);
+    background-color: rgb(140, 210, 237);
+    z-index: 1;
+}
+// 书籍列表
+.container{
+    margin-top: (40 / @vm);
+    .bk_list{
+        .list_item{
+            height: (100 / @vm);
+            border-bottom: 1px solid #ededed;
+            .item_lk{
+                position: relative;
+                display: block;
+                height: 100%;
+                // 图片
+                .bk_cover{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: (100 / @vm);
+                    padding: (5 / @vm);
+                }
+                // 书籍信息
+                .bk_info{
+                    margin-left: (100 / @vm);
+                    height: 100%;
+                    .bk_title{
+                        // font-size: (18 / @vm);
+                        font-weight: 600;
+                    }
+                    .bk_author, .bk_intro,.bk_public{
+                        margin-top: (5 / @vm);
+                        font-size: (14 / @vm);
+                        color: #a5a5a5;
+                    }
+                    .bk_intro{
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 回到顶部按钮
+.arrowUp{
+    display: none;
+    &::after{
+        content: "\e601";
+        position: fixed;
+        right: (20 / @vm);
+        bottom: (30 / @vm);
+        font-size: (30 / @vm);
+        font-family: "iconfont";
+    }
+  }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+</body>
+<script>
+    let oDiv = document.getElementsByTagName("div")[0]
+
+    Element.prototype.hasChlidren = function() {
+        let children = this.childNodes,
+            length = children.length
+
+        // 遍历元素节点下所有节点
+        for (let i = 0; i < length; i++) {
+            // 判断是否是元素节点
+            if (children[i].nodeType === 1) {
+                return true
+            }
+        }
+        return false
+    }
+    console.log(oDiv.hasChlidren());
+</script>
+
+</html>

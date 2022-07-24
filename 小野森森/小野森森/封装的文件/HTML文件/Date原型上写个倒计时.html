@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+</body>
+<script>
+    Date.prototype.countDown = function(fetureTime) {
+        let time = (fetureTime - this.getTime()) / 1000, // 算出秒数
+            days = Math.floor(time / (60 * 60 * 24)),
+            hours = Math.floor((time % (60 * 60 * 24)) / (60 * 60).toFixed(0)),
+            minutes = Math.floor((time % (60 * 60)) / (60)),
+            seconds = Math.floor((time % (60)));
+        return `${days}天 ${hours}小时 ${minutes}分钟 ${seconds}秒`
+    }
+    let oP = document.getElementsByTagName("p")[0]
+    setInterval(() => {
+        oP.innerHTML = new Date().countDown(new Date("2022-07-17 12:00:00").getTime())
+    }, 1000);
+</script>
+
+</html>

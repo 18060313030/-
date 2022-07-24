@@ -1,0 +1,74 @@
+@import 'global.css';
+
+.site-nav-cover{
+	width: 100%;
+	min-width: 1190px;
+	border-bottom: 1px solid #eee;
+	background-color: #f4f4f4;
+}
+
+.site-nav-bd{
+    height: 35px;
+    font-size: 12px;
+}
+
+.site-nav-bd .site-nav-bd-l{
+	float: left;
+}
+
+.site-nav-bd .site-nav-bd-r{
+	float: right;
+}
+
+.site-nav-bd li{
+	height: 35px;
+	line-height: 35px;
+}
+
+.site-nav-bd .site-nav-menu{
+	float: left;
+}
+
+.site-nav-bd .site-nav-menu.site-nav-dd{
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+}
+
+.site-nav-bd .site-nav-menu.site-nav-dd:hover{
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	background-color: #fff;
+}
+
+.site-nav-bd .site-nav-pipe{
+	float: left;
+	height: 35px;
+	padding: 0 5px;
+	line-height: 35px;
+	font-size: 12px;
+	color: #ccc;
+}
+
+.site-nav-bd .site-nav-menu .site-nav-menu-hd{
+	padding: 0 6px;
+}
+
+.site-nav-bd .site-nav-menu .site-nav-menu-hd a,
+.site-nav-bd .site-nav-menu .site-nav-menu-hd span,
+.site-nav-bd .site-nav-menu .site-nav-menu-hd a span{
+	margin-right: 7px;
+	color: #6c6c6c;
+}
+
+.site-nav-bd .site-nav-menu .site-nav-menu-hd .deep{
+	color: #3c3c3c;
+}
+
+.site-nav-bd .site-nav-menu .site-nav-menu-hd .hl{
+	color: #ff5000;
+}
+
+.site-nav-bd .site-nav-menu .site-nav-menu-hd a:hover,
+.site-nav-bd .site-nav-menu .site-nav-menu-hd a:hover span{
+	color: #ff5000;
+}

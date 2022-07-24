@@ -1,0 +1,78 @@
+.site-positioning{
+	position: fixed;
+	top: 478px;
+	left: 50%;
+	z-index: 999;
+	width: 50px;
+	height: 350px;
+	margin-left: 605px;
+	
+}
+
+.site-positioning .site-positioning-inner{
+	height: 350px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.site-positioning .icon-wangwang{
+	display: block;
+	position: absolute;
+	top: -17px;
+	width: 50px;
+	height: 17px;
+	background: url(../img/wangwang.png) no-repeat 0 0/50px 17px;
+}
+
+.site-positioning .positioning-block{
+	display: block;
+	position: relative;
+	width: 50px;
+	height: 50px;
+	padding: 10px 8px 0;
+	box-sizing: border-box;
+	font-size: 13px;
+	text-align: center;
+	line-height: 16px;
+	color: #3c3c3c;
+}
+
+.site-positioning .positioning-block::after{
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -1px;
+	left: 8px;
+	width: 34px;
+	height: 0;
+	border-bottom: 1px solid #efefef;
+}
+
+.site-positioning .positioning-block.pink{
+	color: #f05;
+}
+
+.site-positioning .positioning-block.purple{
+	color: #8d7afb;
+}
+
+.site-positioning .positioning-block.green{
+	color: #A8C001;
+}
+
+.site-positioning .positioning-block.tb-red{
+	color: #f40;
+}
+
+.site-positioning .positioning-block span{
+	line-height: 30px;
+	font-size: 12px;
+}
+
+.site-positioning .positioning-block:hover,
+.site-positioning .positioning-block.on{
+	background-color: #ff5000;
+	color: #fff;
+	font-weight: bold;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <!-- 我是注释 -->
+            <a href="">标签</a>
+            <p>p标签</p>
+            <h1>h1标签</h1>
+        </li>
+    </ul>
+</body>
+<script>
+    let a = document.getElementsByTagName("a")[0]
+
+    Element.prototype.getParent = function(n) {
+        let _ele = this // 保存this,this直接被赋值时会报错
+
+        // 传入的数值为空，或不为数字 
+        if (n === undefined || typeof(n) !== "number") {
+            return this.parentNode
+        }
+        // 传入的数值小于0
+        if (n < 0) {
+            return undefined
+        }
+
+        // 遍历，一直给当前元素找其父级节点，以此类推，直到找完
+        while (n) {
+            if (_ele === null) {
+                break
+            }
+            _ele = _ele.parentNode
+            n--
+        }
+        return _ele
+    }
+
+    console.log(a.getParent(7));
+</script>
+
+</html>

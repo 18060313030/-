@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="javascript:;" data-mark="free" data-uri="txwz">天下无贼</a><br/>
+    <a href="javascript:;" data-mark="free" data-uri="fqyy">风起云涌</a><br/>
+    <a href="javascript:;" data-mark="pay" data-uri="lbxx">蜡笔小新</a><br/>
+    <a href="javascript:;" data-mark="free" data-uri="sqbb">神奇宝贝</a><br/>
+</body>
+<script>
+    let a = document.getElementsByTagName("a")
+    for (let i = 0; i < a.length; i++) {
+        let link = a[i]
+        link.onclick = function() {
+            let mark = link.dataset.mark
+            let uri = link.dataset.uri
+            if (mark === "free") {
+                link.setAttribute("href", "https://www.baidu.com" + uri)
+            } else {
+                alert("付费电影")
+            }
+        }
+    }
+</script>
+
+</html>

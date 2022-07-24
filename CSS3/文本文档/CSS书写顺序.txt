@@ -1,0 +1,4 @@
+浏览器执行效率更高
+1、浮动/display
+2、盒子模型：margin border padding 宽度高度背景
+3、文字样式

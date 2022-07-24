@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            margin-top: 10px;
+            width: 100px;
+            height: 20px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button>添加</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</body>
+<script>
+    let oUl = document.getElementsByTagName("ul")[0],
+        oBtn = document.getElementsByTagName("button")[0],
+        oLis = document.getElementsByTagName("li")
+
+    oUl.onclick = function(e) {
+        var e = e || window.e,
+            tar = e.target || e.srcElement
+
+        // 找到事件委托下 对应事件源对象的索引值
+        let index = Array.prototype.indexOf.call(oLis, tar)
+        console.log(index);
+    }
+
+    // 添加li
+    oBtn.onclick = function() {
+        let oLi = document.createElement("li")
+        oLi.innerHTML = oLis.length + 1
+        oUl.appendChild(oLi)
+    }
+</script>
+
+</html>
