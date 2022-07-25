@@ -1,6 +1,0 @@
-transform translate(-50%, -50%); 50%是相对于盒子自身的大小的50%
-
-transform复合属性实现多重转换：
-  比如轮胎转动： transform: translate(600px) rotate(360deg)
-  	 	不能将上面的代码改成rotate在前，因为先写旋转，则后面的转换效果的轴向以旋转后的轴向为准，会影响转换结果
-     		不能拆开来写，因为CSS样式的层叠性，后面的transform会覆盖前面的

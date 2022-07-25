@@ -1,5 +1,0 @@
-width:0;
-height:0;
-border: 8px solid #000;
-border-style: solid dashed dashed;
-border-color: #fff transparent transparent;
