@@ -1,0 +1,4 @@
+indent-rainbow 缩进彩虹
+code-translate 单词翻译
+image preview 图片显示
+code spell checker js语法检查

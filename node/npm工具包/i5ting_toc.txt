@@ -1,0 +1,6 @@
+i5ting_toc 是一个可以把 md 文档转为 html 页面的小工具
+
+
+npm install -g i5ting_toc
+
+i5ting_toc -f  md文件路径  -o // -o表示转换完成后自动打开默认浏览器

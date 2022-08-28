@@ -1,0 +1,20 @@
+input {
+        /* appearance 清除单选框默认样式，然后就可以对其进行样式重写了 */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        width: 20px;
+        height: 20px;
+        vertical-align: bottom;
+        line-height: 16px;
+        text-align: center;
+    }
+    
+    input:checked::after {
+        content: "\e8c3";
+        font-family: iconfont;
+        font-size: 16px;
+        color: red;
+    }

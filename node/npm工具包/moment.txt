@@ -1,0 +1,7 @@
+格式化时间
+安装：npm i moment
+const moment = require("moment")
+let str = moment().format("YYYY-MM-DD HH:mm:ss")
+console.log(str)
+
+结果： 2022-08-04 16:02:35
