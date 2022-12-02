@@ -1,0 +1,36 @@
+eslint插件
+// 当保存的时候，eslint自动帮我们修复错误
+"editor.codeActionsOnSave": {
+    "source.fixAll": true
+},
+// 保存代码，不自动格式化
+"editor.formatOnSave": false
+
+其他vscode的config文件配置
+{
+  "editor.tabSize": 2,
+  "workbench.iconTheme": "vscode-icons",
+  "explorer.compactFolders": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.enableSmartCommit": true,
+  // 不要有分号
+  "prettier.semi": false,
+  // 使用单引号
+  "prettier.singleQuote": true,
+  // 默认使用prittier作为格式化工具
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "emmet.showAbbreviationSuggestions": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.fontSize": 16,  // 设置文字的大小
+  "window.zoomLevel": 1,
+  "emmet.triggerExpansionOnTab": true,
+  // 保存时自动格式化 - 按照eslint的规则格式化
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  // 保存代码，不自动格式化
+  "editor.formatOnSave": false
+}
